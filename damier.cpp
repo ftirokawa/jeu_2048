@@ -174,3 +174,7 @@ ostream& operator <<(ostream &s, const Damier &A){
     s <<endl;
     return s;
 }
+
+QString Damier::getBoxVal(){
+    return QString::number(mat[1][1].getVal());
+}

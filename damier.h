@@ -12,6 +12,8 @@ class Damier : public QObject
     Q_OBJECT
 public:
 
+    Q_PROPERTY(QString boxValQML READ getBoxVal NOTIFY boxValDemandee);
+
     explicit Damier(int nb_lignes, int nb_colonnes, int borne_inf, int borne_sup, int valInit = 0, QObject *parent = nullptr); // La valeur par défaut est écrite juste dans le fichier .h
     explicit Damier(const Damier &copier); // Constructeur de récopie
     ~Damier(); // Destructeur
@@ -30,6 +32,7 @@ public:
 
     virtual void InitJeu() = 0; // Méthode abstraite qui rend la classe abstraite;
 
+    QString getBoxVal();
 private:
     Box **mat = NULL;
     int nb_lignes;
@@ -39,6 +42,7 @@ private:
 
 
 signals:
+    void boxValDemandee();
 
 public slots:
 };

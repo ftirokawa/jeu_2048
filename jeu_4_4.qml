@@ -31,6 +31,22 @@ Window {
             anchors.leftMargin: 10
             anchors.left: parent.left
             anchors.topMargin: 10
+
+            Rectangle {
+                id: rectangle
+                color: "#ffffff"
+                anchors.fill: parent
+
+                Text {
+                    id: valeur1
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                }
+            }
         }
 
         Rectangle {
