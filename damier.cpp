@@ -208,9 +208,33 @@ QList<QString> Damier::getCouleur(){
     return colVect;
 }
 
-void Damier::mouvement(){
+/*La méthode mouvement a été code en 3 étapes
+1) Il y d'abord le mouvement de toutes les boxes existantes dans le damier
+2) Après les fusions sont réalisées.
+3) Finalement la nouvelle box 2 ou 4 est ajouté
+*/
+void Damier::mouvement(int direction){
 
-    // Instantiation aléatoire d'une box à valeur initial 2 ou 4
+    //1) Mouvement des boxes
+    // 4 situations : mouvement vers gauche, droite, haut ou bas
+    switch (direction) {
+    case 1:
+        mouvementHaut();
+        break;
+    case 2:
+        mouvementBas();
+        break;
+    case 3:
+        mouvementGauche();
+        break;
+    case 4:
+        mouvementDroite();
+        break;
+    default:
+        break;
+    }
+
+    //3) Instantiation aléatoire d'une box à valeur initial 2 ou 4
     srand(time(NULL));
     int i, j, rarete;
     rarete = rand()%10;
@@ -232,6 +256,7 @@ void Damier::mouvement(){
     }
     emit boxValDemandee();
     emit couleurDemandee();
+
 }
 
 bool Damier::damierRemplit(){
@@ -244,4 +269,138 @@ bool Damier::damierRemplit(){
         }
     }
     return remplit;
+}
+
+bool ** Damier::initialisationMatrice(){
+    bool **matrice;
+    matrice = new bool*[4];
+    for (int i=0; i<4; i++){
+            matrice[i] = new bool[4];
+    }
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            matrice[i][j] = 0;
+        }
+    }
+    return matrice;
+}
+
+void Damier::mouvementHaut(){
+    int x,y; // position dans la grille de la box étudié
+    // Ce boolean indique si la box d'une position donnée a été fusioné lors de cet appel ou pas
+    bool **fusion = initialisationMatrice();
+
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            x = i;
+            y = j;
+            for (int w=(i-1); w>=0; w--){ // Il va regarder les lignes au-dessous de la ligne étudié "i"
+                // Si la position dans la même colonnes, mais de la ligne au-dessous est libre, il mouvemente la box vers cette position
+                if (mat[w][j].getVal() == 0){
+                    mat[w][j] = mat[x][y];
+                    mat[x][y] = Box(); // Création d'une nouvelle box et libération de l'espace
+                    x = w; // la position change
+                } else{ // Sinon si la box a la même valeur que la box en mouvement
+                    if (mat[w][j].getVal() == mat[x][y].getVal() && fusion[w][j] == 0 && fusion[x][y] == 0){ // 3) Fusion
+                        mat[w][j].ChangeVal();
+                        mat[w][j].changeCouleur();
+                        mat[x][y] = Box();
+                        fusion[w][j] = 1;
+                        x = w;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+void Damier::mouvementBas(){
+    int x,y; // position dans la grille de la box étudié
+    // Ce boolean indique si la box d'une position donnée a été fusioné lors de cet appel ou pas
+    bool **fusion = initialisationMatrice();
+
+    for (int i=3; i>=0; i--){
+        for (int j=0; j<4; j++){
+            x = i;
+            y = j;
+            for (int w=(i+1); w<4; w++){ // Il va regarder les lignes au-dessous de la ligne étudié "i"
+                // Si la position dans la même colonnes, mais de la ligne au-dessous est libre, il mouvemente la box vers cette position
+                if (mat[w][j].getVal() == 0){
+                    mat[w][j] = mat[x][y];
+                    mat[x][y] = Box(); // Création d'une nouvelle box et libération de l'espace
+                    x = w; // la position change
+                } else{ // Sinon si la box a la même valeur que la box en mouvement
+                    if (mat[w][j].getVal() == mat[x][y].getVal() && fusion[w][j] == 0  && fusion[x][y] == 0){ // 3) Fusion
+                        mat[w][j].ChangeVal();
+                        mat[w][j].changeCouleur();
+                        mat[x][y] = Box();
+                        fusion[w][j] = 1;
+                        x = w;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+void Damier::mouvementGauche(){
+    int x,y; // position dans la grille de la box étudié
+    // Ce boolean indique si la box d'une position donnée a été fusioné lors de cet appel ou pas
+    bool **fusion = initialisationMatrice();
+
+    for (int j=0; j<4; j++){
+        for (int i=0; i<4; i++){
+            x = i;
+            y = j;
+            for (int w=(j-1); w>=0; w--){ // Il va regarder les lignes au-dessous de la ligne étudié "i"
+                // Si la position dans la même colonnes, mais de la ligne au-dessous est libre, il mouvemente la box vers cette position
+                if (mat[i][w].getVal() == 0){
+                    mat[i][w] = mat[x][y];
+                    mat[x][y] = Box(); // Création d'une nouvelle box et libération de l'espace
+                    y = w; // la position change
+                } else{ // Sinon si la box a la même valeur que la box en mouvement
+                    if (mat[i][w].getVal() == mat[x][y].getVal() && fusion[i][w] == 0  && fusion[x][y] == 0){ // 3) Fusion
+                        mat[i][w].ChangeVal();
+                        mat[i][w].changeCouleur();
+                        mat[x][y] = Box();
+                        fusion[i][w] = 1;
+                        y = w;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+void Damier::mouvementDroite(){
+    int x,y; // position dans la grille de la box étudié
+    // Ce boolean indique si la box d'une position donnée a été fusioné lors de cet appel ou pas
+    bool **fusion = initialisationMatrice();
+
+    for (int j=3; j>=0; j--){
+        for (int i=0; i<4; i++){
+            x = i;
+            y = j;
+            for (int w=(j+1); w<4; w++){ // Il va regarder les lignes au-dessous de la ligne étudié "i"
+                // Si la position dans la même colonnes, mais de la ligne au-dessous est libre, il mouvemente la box vers cette position
+                if (mat[i][w].getVal() == 0){
+                    mat[i][w] = mat[x][y];
+                    mat[x][y] = Box(); // Création d'une nouvelle box et libération de l'espace
+                    y = w; // la position change
+                } else{ // Sinon si la box a la même valeur que la box en mouvement
+                    if (mat[i][w].getVal() == mat[x][y].getVal() && fusion[i][w] == 0  && fusion[x][y] == 0){ // 3) Fusion
+                        mat[i][w].ChangeVal();
+                        mat[i][w].changeCouleur();
+                        mat[x][y] = Box();
+                        fusion[i][w] = 1;
+                        y = w;
+                    }
+                }
+
+            }
+        }
+    }
 }

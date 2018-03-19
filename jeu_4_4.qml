@@ -473,16 +473,16 @@ Window {
         Keys.onPressed: {
           switch (event.key) {
             case Qt.Key_Up:
-              damier.mouvement();
+              damier.mouvement(1);
               break;
             case Qt.Key_Down:
-              damier.mouvement();
+              damier.mouvement(2);
               break;
             case Qt.Key_Left:
-              damier.mouvement();
+              damier.mouvement(3);
               break;
             case Qt.Key_Right:
-              damier.mouvement();
+              damier.mouvement(4);
               break;
           }
        }

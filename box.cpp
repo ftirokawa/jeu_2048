@@ -14,6 +14,49 @@ void Box::ChangeVal (){
     }
 }
 
+void Box::changeCouleur(){
+    switch (val) {
+    case 0:
+        couleur = "#ccc0b4";
+        break;
+    case 2:
+        couleur = "#eee4da";
+        break;
+    case 4:
+        couleur = "#ede0c8";
+        break;
+    case 8:
+        couleur = "#f2b179";
+        break;
+    case 16:
+        couleur = "#f59563";
+        break;
+    case 32:
+        couleur = "#f67c5f";
+        break;
+    case 64:
+        couleur = "#f65e3b";
+        break;
+    case 128:
+        couleur = "#ccc0b4";
+        break;
+    case 256:
+        couleur = "#ccc0b4";
+        break;
+    case 512:
+        couleur = "#ccc0b4";
+        break;
+    case 1024:
+        couleur = "#ccc0b4";
+        break;
+    case 2048:
+        couleur = "#ccc0b4";
+        break;
+    default:
+        break;
+    }
+}
+
 int Box::getVal(){
     return val;
 }

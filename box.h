@@ -11,6 +11,7 @@ class Box
 public:
     Box(int val = 0, string couleur = "#ccc0b4");
     void ChangeVal ();
+    void changeCouleur();
 
     int getVal();
     void setVal(int valeur);

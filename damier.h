@@ -36,10 +36,16 @@ public:
     virtual void InitJeu() = 0; // Méthode abstraite qui rend la classe abstraite;
 
     bool damierRemplit();
+    bool ** initialisationMatrice();
+    void mouvementHaut();
+    void mouvementBas();
+    void mouvementGauche();
+    void mouvementDroite();
+
     QList<QString> getBoxVal();
     QList<QString> getCouleur();
 
-    Q_INVOKABLE void mouvement();
+    Q_INVOKABLE void mouvement(int direction);
 
 private:
     Box **mat = NULL;
