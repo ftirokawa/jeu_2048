@@ -1,11 +1,11 @@
 #include "damier.h"
 
-Damier::Damier(int nb_lignes, int nb_colonnes, int borne_inf, int borne_sup, int valInit, QObject *parent) : QObject(parent)
+Damier::Damier(int nb_lignes, int nb_colonnes, int borne_inf, int borne_sup, QObject *parent) : QObject(parent)
 {
 
     Redim(nb_lignes, nb_colonnes, borne_inf, borne_sup);
-
-    Remplir (valInit);
+    emit boxValDemandee();
+    emit couleurDemandee();
 }
 
 Damier::Damier(const Damier &copier): QObject(copier.parent()){
@@ -63,7 +63,7 @@ void Damier::Remplir(int valInit){
 
     for (int i=0; i<nb_lignes; i++){
         for(int j=0; j<nb_colonnes;j++){
-            mat[i][j] = Box(valInit);
+            mat[i][j] = Box(valInit, "#ccc0b4");
         }
     }
     return;
@@ -115,6 +115,7 @@ void Damier::Alloc(int lignes, int colonnes, int borne_inf, int borne_sup){
     this->nb_colonnes = colonnes;
     this->borne_sup = borne_sup;
     this->borne_inf = borne_inf;
+
 
     Remplir(0);
     return;
@@ -175,6 +176,72 @@ ostream& operator <<(ostream &s, const Damier &A){
     return s;
 }
 
-QString Damier::getBoxVal(){
-    return QString::number(mat[1][1].getVal());
+QList<QString> Damier::getBoxVal(){
+    QList<QString> valVect;
+
+    // Prise des valeurs à partir des box
+    for (int i =0; i<4; i++){
+        for (int j=0; j<4; j++){
+            if (mat[i][j].getVal() != 0){
+                valVect.append(QString::number(mat[i][j].getVal()));
+            } else {
+                valVect.append(QString(""));
+            }
+        }
+    }
+    return valVect;
+}
+
+QList<QString> Damier::getCouleur(){
+    QList<QString> colVect;
+
+    // Prise des valeurs à partir des box
+    for (int i =0; i<4; i++){
+        for (int j=0; j<4; j++){
+            if (mat[i][j].getVal() != 0){
+                colVect.append(QString::fromStdString(mat[i][j].getCouleur()));
+            } else {
+                colVect.append("");
+            }
+        }
+    }
+    return colVect;
+}
+
+void Damier::mouvement(){
+
+    // Instantiation aléatoire d'une box à valeur initial 2 ou 4
+    srand(time(NULL));
+    int i, j, rarete;
+    rarete = rand()%10;
+    int controle = 0;
+    bool remplit = damierRemplit();
+    while (controle ==0 && remplit != 1){
+        i = rand()%4; // des indices de 0 à 3
+        j = rand()%4;
+
+        if (mat[i][j].getVal() == 0 && rarete == 9){
+            mat[i][j] = Box(4);
+            controle = 1;
+        } else{
+            if(mat[i][j].getVal() == 0){
+                mat[i][j] = Box(2);
+                controle=1;
+            }
+        }
+    }
+    emit boxValDemandee();
+    emit couleurDemandee();
+}
+
+bool Damier::damierRemplit(){
+    bool remplit = 1;
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            if (mat[i][j].getVal() == 0){
+                remplit = 0;
+            }
+        }
+    }
+    return remplit;
 }

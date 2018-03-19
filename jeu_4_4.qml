@@ -19,6 +19,7 @@ Window {
         anchors.topMargin: 190
         anchors.horizontalCenterOffset: 0
         anchors.horizontalCenter: parent.horizontalCenter
+        focus: true
 
         Rectangle {
             id: box_1_1
@@ -34,14 +35,15 @@ Window {
 
             Rectangle {
                 id: rectangle
-                color: "#ffffff"
+                color: damier.boxColQML[0]
                 anchors.fill: parent
 
                 Text {
                     id: valeur1
                     x: 34
                     y: 38
-                    text: damier.boxValQML
+                    color: "#000000"
+                    text: damier.boxValQML[0]
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 12
@@ -60,6 +62,21 @@ Window {
             anchors.leftMargin: 10
             anchors.left: parent.left
             anchors.topMargin: 110
+
+            Rectangle {
+                id: rectangle4
+                color: damier.boxColQML[4]
+                anchors.fill: parent
+                Text {
+                    id: valeur5
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML[4]
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
 
         Rectangle {
@@ -73,6 +90,21 @@ Window {
             anchors.leftMargin: 10
             anchors.left: parent.left
             anchors.topMargin: 210
+
+            Rectangle {
+                id: rectangle8
+                color: damier.boxColQML[8]
+                anchors.fill: parent
+                Text {
+                    id: valeur9
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML[8]
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
 
         Rectangle {
@@ -86,6 +118,21 @@ Window {
             anchors.leftMargin: 10
             anchors.left: parent.left
             anchors.topMargin: 310
+
+            Rectangle {
+                id: rectangle12
+                color: damier.boxColQML[12]
+                anchors.fill: parent
+                Text {
+                    id: valeur13
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML[12]
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
 
         Rectangle {
@@ -99,6 +146,21 @@ Window {
             anchors.leftMargin: 110
             anchors.left: parent.left
             anchors.topMargin: 10
+
+            Rectangle {
+                id: rectangle1
+                color: damier.boxColQML[1]
+                anchors.fill: parent
+                Text {
+                    id: valeur2
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML[1]
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
 
         Rectangle {
@@ -112,6 +174,21 @@ Window {
             anchors.leftMargin: 110
             anchors.left: parent.left
             anchors.topMargin: 110
+
+            Rectangle {
+                id: rectangle5
+                color: damier.boxColQML[5]
+                anchors.fill: parent
+                Text {
+                    id: valeur6
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML[5]
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
 
         Rectangle {
@@ -125,6 +202,21 @@ Window {
             anchors.leftMargin: 110
             anchors.left: parent.left
             anchors.topMargin: 210
+
+            Rectangle {
+                id: rectangle9
+                color: damier.boxColQML[9]
+                anchors.fill: parent
+                Text {
+                    id: valeur10
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML[9]
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
 
         Rectangle {
@@ -138,6 +230,21 @@ Window {
             anchors.leftMargin: 110
             anchors.left: parent.left
             anchors.topMargin: 310
+
+            Rectangle {
+                id: rectangle13
+                color: damier.boxColQML[13]
+                anchors.fill: parent
+                Text {
+                    id: valeur14
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML[13]
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
 
         Rectangle {
@@ -151,6 +258,21 @@ Window {
             anchors.leftMargin: 210
             anchors.left: parent.left
             anchors.topMargin: 10
+
+            Rectangle {
+                id: rectangle2
+                color: damier.boxColQML[2]
+                anchors.fill: parent
+                Text {
+                    id: valeur3
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML[2]
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
 
         Rectangle {
@@ -164,6 +286,21 @@ Window {
             anchors.leftMargin: 210
             anchors.left: parent.left
             anchors.topMargin: 110
+
+            Rectangle {
+                id: rectangle6
+                color: damier.boxColQML[6]
+                anchors.fill: parent
+                Text {
+                    id: valeur7
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML[6]
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
 
         Rectangle {
@@ -177,6 +314,21 @@ Window {
             anchors.leftMargin: 210
             anchors.left: parent.left
             anchors.topMargin: 210
+
+            Rectangle {
+                id: rectangle10
+                color: damier.boxColQML[10]
+                anchors.fill: parent
+                Text {
+                    id: valeur11
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML[10]
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
 
         Rectangle {
@@ -190,6 +342,21 @@ Window {
             anchors.leftMargin: 210
             anchors.left: parent.left
             anchors.topMargin: 310
+
+            Rectangle {
+                id: rectangle14
+                color: damier.boxColQML[14]
+                anchors.fill: parent
+                Text {
+                    id: valeur15
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML[14]
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
 
         Rectangle {
@@ -203,6 +370,21 @@ Window {
             anchors.leftMargin: 310
             anchors.left: parent.left
             anchors.topMargin: 10
+
+            Rectangle {
+                id: rectangle3
+                color: damier.boxColQML[3]
+                anchors.fill: parent
+                Text {
+                    id: valeur4
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML[3]
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
 
         Rectangle {
@@ -216,6 +398,21 @@ Window {
             anchors.leftMargin: 310
             anchors.left: parent.left
             anchors.topMargin: 110
+
+            Rectangle {
+                id: rectangle7
+                color: damier.boxColQML[7]
+                anchors.fill: parent
+                Text {
+                    id: valeur8
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML[7]
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
 
         Rectangle {
@@ -229,6 +426,21 @@ Window {
             anchors.leftMargin: 310
             anchors.left: parent.left
             anchors.topMargin: 210
+
+            Rectangle {
+                id: rectangle11
+                color: damier.boxColQML[11]
+                anchors.fill: parent
+                Text {
+                    id: valeur12
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML[11]
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
 
         Rectangle {
@@ -242,8 +454,41 @@ Window {
             anchors.leftMargin: 310
             anchors.left: parent.left
             anchors.topMargin: 310
+
+            Rectangle {
+                id: rectangle15
+                color: damier.boxColQML[15]
+                anchors.fill: parent
+                Text {
+                    id: valeur16
+                    x: 34
+                    y: 38
+                    text: damier.boxValQML[15]
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: 12
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
+        Keys.onPressed: {
+          switch (event.key) {
+            case Qt.Key_Up:
+              damier.mouvement();
+              break;
+            case Qt.Key_Down:
+              damier.mouvement();
+              break;
+            case Qt.Key_Left:
+              damier.mouvement();
+              break;
+            case Qt.Key_Right:
+              damier.mouvement();
+              break;
+          }
+       }
     }
+
+
 
     Text {
         id: titre
@@ -380,4 +625,5 @@ Window {
         anchors.verticalCenter: box_new_game.verticalCenter
         font.pixelSize: 14
     }
+
 }

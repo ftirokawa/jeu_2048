@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>jeu_4_4.qml</file>
         <file>Jeu_Modèle.qml</file>
+        <file>test.qml</file>
     </qresource>
 </RCC>

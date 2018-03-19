@@ -13,8 +13,9 @@ int main(int argc, char *argv[])
     Damier2048 test;
 
     QQmlApplicationEngine engine;
+//    qRegisterMetaType<QString**>("QString**");
     engine.rootContext()->setContextProperty("damier", &test);
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/jeu_4_4.qml")));
 
     if (engine.rootObjects().isEmpty())
         return -1;

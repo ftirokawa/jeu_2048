@@ -9,7 +9,7 @@ using namespace std;
 class Box
 {
 public:
-    Box(int val = 0, string couleur = "transparent");
+    Box(int val = 0, string couleur = "#ccc0b4");
     void ChangeVal ();
 
     int getVal();

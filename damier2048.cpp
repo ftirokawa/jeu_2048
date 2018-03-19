@@ -1,6 +1,6 @@
 #include "damier2048.h"
 
-Damier2048::Damier2048() : Damier(4, 4, 0, 2048, 0)
+Damier2048::Damier2048() : Damier(4, 4, 0, 2048)
 {
     InitJeu();
 }
