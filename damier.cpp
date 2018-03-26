@@ -4,8 +4,10 @@ Damier::Damier(int nb_lignes, int nb_colonnes, int borne_inf, int borne_sup, QOb
 {
 
     Redim(nb_lignes, nb_colonnes, borne_inf, borne_sup);
+    pontuation=0;
     emit boxValDemandee();
     emit couleurDemandee();
+    emit score_changed();
 }
 
 Damier::Damier(const Damier &copier): QObject(copier.parent()){
@@ -246,16 +248,19 @@ void Damier::mouvement(int direction){
 
         if (mat[i][j].getVal() == 0 && rarete == 9){
             mat[i][j] = Box(4);
+            add_score(mat[i][j].getVal());
             controle = 1;
         } else{
             if(mat[i][j].getVal() == 0){
                 mat[i][j] = Box(2);
+                add_score(mat[i][j].getVal());
                 controle=1;
             }
         }
     }
     emit boxValDemandee();
     emit couleurDemandee();
+    emit score_changed();
 
 }
 
@@ -305,6 +310,7 @@ void Damier::mouvementHaut(){
                         mat[w][j].ChangeVal();
                         mat[w][j].changeCouleur();
                         mat[x][y] = Box();
+                        add_score(mat[w][j].getVal());
                         fusion[w][j] = 1;
                         x = w;
                     }
@@ -335,6 +341,7 @@ void Damier::mouvementBas(){
                         mat[w][j].ChangeVal();
                         mat[w][j].changeCouleur();
                         mat[x][y] = Box();
+                        add_score(mat[w][j].getVal());
                         fusion[w][j] = 1;
                         x = w;
                     }
@@ -365,6 +372,7 @@ void Damier::mouvementGauche(){
                         mat[i][w].ChangeVal();
                         mat[i][w].changeCouleur();
                         mat[x][y] = Box();
+                        add_score(mat[w][j].getVal());
                         fusion[i][w] = 1;
                         y = w;
                     }
@@ -395,6 +403,7 @@ void Damier::mouvementDroite(){
                         mat[i][w].ChangeVal();
                         mat[i][w].changeCouleur();
                         mat[x][y] = Box();
+                        add_score(mat[w][j].getVal());
                         fusion[i][w] = 1;
                         y = w;
                     }
@@ -403,4 +412,17 @@ void Damier::mouvementDroite(){
             }
         }
     }
+}
+
+QString Damier::readScore()
+{
+    return QString::number(pontuation);
+}
+
+void Damier::add_score(int value){
+    pontuation+=value;
+}
+
+void Damier::zero_score(){
+    pontuation=0;
 }

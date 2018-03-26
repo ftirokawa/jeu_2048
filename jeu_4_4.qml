@@ -536,7 +536,7 @@ Window {
             x: 39
             y: 29
             color: "#ffffff"
-            text: qsTr("0")
+            text: damier.scoreValQML
             anchors.horizontalCenter: parent.horizontalCenter
             font.bold: true
             anchors.bottom: parent.bottom

@@ -16,6 +16,7 @@ public:
 
     Q_PROPERTY(QList<QString> boxValQML READ getBoxVal NOTIFY boxValDemandee)
     Q_PROPERTY(QList<QString> boxColQML READ getCouleur NOTIFY couleurDemandee)
+    Q_PROPERTY(QString scoreValQML READ readScore NOTIFY score_changed);
 
     explicit Damier(int nb_lignes, int nb_colonnes, int borne_inf, int borne_sup, QObject *parent = nullptr); // La valeur par défaut est écrite juste dans le fichier .h
     explicit Damier(const Damier &copier); // Constructeur de récopie
@@ -42,8 +43,14 @@ public:
     void mouvementGauche();
     void mouvementDroite();
 
+    void add_score(int value);
+    void zero_score();
+
+
     QList<QString> getBoxVal();
     QList<QString> getCouleur();
+    QString readScore();
+
 
     Q_INVOKABLE void mouvement(int direction);
 
@@ -53,11 +60,14 @@ private:
     int nb_colonnes;
     int borne_sup;
     int borne_inf;
+    int pontuation;
 
 
 signals:
     void boxValDemandee();
     void couleurDemandee();
+    void score_changed();
+
 
 public slots:
 };
