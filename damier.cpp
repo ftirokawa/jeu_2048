@@ -5,9 +5,12 @@ Damier::Damier(int nb_lignes, int nb_colonnes, int borne_inf, int borne_sup, QOb
 
     Redim(nb_lignes, nb_colonnes, borne_inf, borne_sup);
     pontuation=0;
+    best=0;
     emit boxValDemandee();
     emit couleurDemandee();
     emit score_changed();
+    emit best_changed();
+
 }
 
 Damier::Damier(const Damier &copier): QObject(copier.parent()){
@@ -261,6 +264,7 @@ void Damier::mouvement(int direction){
     emit boxValDemandee();
     emit couleurDemandee();
     emit score_changed();
+    emit best_changed();
 
 }
 
@@ -421,8 +425,31 @@ QString Damier::readScore()
 
 void Damier::add_score(int value){
     pontuation+=value;
+    new_best(pontuation);
 }
 
-void Damier::zero_score(){
+
+
+QString Damier::readBest()
+{
+    return QString::number(best);
+}
+
+
+
+void Damier::new_best(int value){
+    if(value>best)
+    {
+        best=value;
+    }
+}
+
+
+void Damier::new_game(){
+    Redim(nb_lignes, nb_colonnes, borne_inf, borne_sup);
     pontuation=0;
+    emit boxValDemandee();
+    emit couleurDemandee();
+    emit score_changed();
+    emit best_changed();
 }

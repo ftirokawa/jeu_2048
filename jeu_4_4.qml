@@ -580,7 +580,7 @@ Window {
             x: 39
             y: 29
             color: "#ffffff"
-            text: qsTr("34505")
+            text: damier.bestValQML
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
             font.bold: true
@@ -612,6 +612,12 @@ Window {
             anchors.fill: parent
             font.family: "Verdana"
             font.pixelSize: 16
+        }
+
+        MouseArea {
+            id: mouseArea
+            anchors.fill: parent
+            onClicked: damier.new_game()
         }
     }
 
