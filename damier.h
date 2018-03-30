@@ -16,8 +16,11 @@ public:
 
     Q_PROPERTY(QList<QString> boxValQML READ getBoxVal NOTIFY boxValDemandee)
     Q_PROPERTY(QList<QString> boxColQML READ getCouleur NOTIFY couleurDemandee)
-    Q_PROPERTY(QString scoreValQML READ readScore NOTIFY score_changed);
+    Q_PROPERTY(QString scoreValQML READ readScore NOTIFY score_changed)
     Q_PROPERTY(QString bestValQML READ readBest NOTIFY best_changed)
+    Q_PROPERTY(QList<int> boxPosXQML READ getBoxX NOTIFY boxXDemandee)
+    Q_PROPERTY(QList<int> boxPosYQML READ getBoxY NOTIFY boxYDemandee)
+    Q_PROPERTY(int controleQML READ controleMethode NOTIFY controleChange)
 
 
     explicit Damier(int nb_lignes, int nb_colonnes, int borne_inf, int borne_sup, QObject *parent = nullptr); // La valeur par défaut est écrite juste dans le fichier .h
@@ -53,10 +56,14 @@ public:
     QList<QString> getCouleur();
     QString readScore();
     QString readBest();
+    QList<int> getBoxX();
+    QList<int> getBoxY();
+
 
 
     Q_INVOKABLE void mouvement(int direction);
     Q_INVOKABLE void new_game();
+    int controleMethode();
 
 
 private:
@@ -67,13 +74,16 @@ private:
     int borne_inf;
     int pontuation;
     int best;
-
+    int controle;
 
 signals:
     void boxValDemandee();
     void couleurDemandee();
     void score_changed();
     void best_changed();
+    void boxXDemandee();
+    void boxYDemandee();
+    void controleChange();
 
 
 public slots:

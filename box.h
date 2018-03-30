@@ -9,7 +9,7 @@ using namespace std;
 class Box
 {
 public:
-    Box(int val = 0, string couleur = "#ccc0b4");
+    Box(int id = 0, int x=0, int y=0, int val = 0, string couleur = "#ccc0b4");
     void ChangeVal ();
     void changeCouleur();
 
@@ -19,9 +19,19 @@ public:
     void increment(int valeur);
     friend ostream& operator <<(ostream &s, const Box &A);
 
+    int getX();
+    void setX(int x);
+    int getY();
+    void setY(int y);
+    int getID();
+    void setID(int id);
+
 private:
+    int id;
     int val;
     string couleur;
+    int x;
+    int y;
 
 };
 

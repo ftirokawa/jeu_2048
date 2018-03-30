@@ -7,6 +7,7 @@ Window {
     width: 480
     height: 640
     color: "#faf8ef"
+    property alias valeur1: valeur1
     title: qsTr("Hello World")
 
     Rectangle {
@@ -23,8 +24,8 @@ Window {
 
         Rectangle {
             id: box_1_1
-            x: 10
-            y: 10
+            x: 10;
+            y: 10;
             width: 90
             height: 90
             color: "#ccc0b4"
@@ -32,23 +33,28 @@ Window {
             anchors.leftMargin: 10
             anchors.left: parent.left
             anchors.topMargin: 10
+        }
 
-            Rectangle {
-                id: rectangle
-                color: damier.boxColQML[0]
-                anchors.fill: parent
+        Rectangle {
+            id: rectangle
+            x: damier.boxPosXQML[0]
+            y: damier.boxPosYQML[0]
+            width: 90
+            height: 90
+            color: damier.boxColQML[0]
+            z: 1
 
-                Text {
-                    id: valeur1
-                    x: 34
-                    y: 38
-                    color: "#000000"
-                    text: damier.boxValQML[0]
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                }
+            Text {
+                id: valeur1
+                x: 34
+                y: 38
+                color: "#000000"
+                text: damier.boxValQML[0]
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
             }
+
         }
 
         Rectangle {
@@ -62,20 +68,24 @@ Window {
             anchors.leftMargin: 10
             anchors.left: parent.left
             anchors.topMargin: 110
+        }
 
-            Rectangle {
-                id: rectangle4
-                color: damier.boxColQML[4]
-                anchors.fill: parent
-                Text {
-                    id: valeur5
-                    x: 34
-                    y: 38
-                    text: damier.boxValQML[4]
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+        Rectangle {
+            id: rectangle4
+            x: damier.boxPosXQML[4];
+            y: damier.boxPosYQML[4];
+            width: 90
+            height: 90
+            color: damier.boxColQML[4]
+            z: 1
+            Text {
+                id: valeur5
+                x: 34
+                y: 38
+                text: damier.boxValQML[4]
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -91,19 +101,24 @@ Window {
             anchors.left: parent.left
             anchors.topMargin: 210
 
-            Rectangle {
-                id: rectangle8
-                color: damier.boxColQML[8]
-                anchors.fill: parent
-                Text {
-                    id: valeur9
-                    x: 34
-                    y: 38
-                    text: damier.boxValQML[8]
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+        }
+
+        Rectangle {
+            id: rectangle8
+            x: damier.boxPosXQML[8];
+            y: damier.boxPosYQML[8];
+            width: 90
+            height: 90
+            color: damier.boxColQML[8]
+            z: 1
+            Text {
+                id: valeur9
+                x: 34
+                y: 38
+                text: damier.boxValQML[8]
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -118,20 +133,24 @@ Window {
             anchors.leftMargin: 10
             anchors.left: parent.left
             anchors.topMargin: 310
+        }
 
-            Rectangle {
-                id: rectangle12
-                color: damier.boxColQML[12]
-                anchors.fill: parent
-                Text {
-                    id: valeur13
-                    x: 34
-                    y: 38
-                    text: damier.boxValQML[12]
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+        Rectangle {
+            id: rectangle12
+            x: damier.boxPosXQML[12]
+            y: damier.boxPosYQML[12]
+            width: 90
+            height: 90
+            color: damier.boxColQML[12]
+            z: 1
+            Text {
+                id: valeur13
+                x: 34
+                y: 38
+                text: damier.boxValQML[12]
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -146,20 +165,24 @@ Window {
             anchors.leftMargin: 110
             anchors.left: parent.left
             anchors.topMargin: 10
+        }
 
-            Rectangle {
-                id: rectangle1
-                color: damier.boxColQML[1]
-                anchors.fill: parent
-                Text {
-                    id: valeur2
-                    x: 34
-                    y: 38
-                    text: damier.boxValQML[1]
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+        Rectangle {
+            id: rectangle1
+            x: damier.boxPosXQML[1]
+            y: damier.boxPosYQML[1]
+            width: 90
+            height: 90
+            color: damier.boxColQML[1]
+            z: 1
+            Text {
+                id: valeur2
+                x: 34
+                y: 38
+                text: damier.boxValQML[1]
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -174,20 +197,24 @@ Window {
             anchors.leftMargin: 110
             anchors.left: parent.left
             anchors.topMargin: 110
+        }
 
-            Rectangle {
-                id: rectangle5
-                color: damier.boxColQML[5]
-                anchors.fill: parent
-                Text {
-                    id: valeur6
-                    x: 34
-                    y: 38
-                    text: damier.boxValQML[5]
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+        Rectangle {
+            id: rectangle5
+            x: damier.boxPosXQML[5]
+            y: damier.boxPosYQML[5]
+            width: 90
+            height: 90
+            color: damier.boxColQML[5]
+            z: 1
+            Text {
+                id: valeur6
+                x: 34
+                y: 38
+                text: damier.boxValQML[5]
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -202,20 +229,24 @@ Window {
             anchors.leftMargin: 110
             anchors.left: parent.left
             anchors.topMargin: 210
+        }
 
-            Rectangle {
-                id: rectangle9
-                color: damier.boxColQML[9]
-                anchors.fill: parent
-                Text {
-                    id: valeur10
-                    x: 34
-                    y: 38
-                    text: damier.boxValQML[9]
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+        Rectangle {
+            id: rectangle9
+            x: damier.boxPosXQML[9]
+            y: damier.boxPosYQML[9]
+            width: 90
+            height: 90
+            color: damier.boxColQML[9]
+            z: 1
+            Text {
+                id: valeur10
+                x: 34
+                y: 38
+                text: damier.boxValQML[9]
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -230,20 +261,24 @@ Window {
             anchors.leftMargin: 110
             anchors.left: parent.left
             anchors.topMargin: 310
+        }
 
-            Rectangle {
-                id: rectangle13
-                color: damier.boxColQML[13]
-                anchors.fill: parent
-                Text {
-                    id: valeur14
-                    x: 34
-                    y: 38
-                    text: damier.boxValQML[13]
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+        Rectangle {
+            id: rectangle13
+            x: damier.boxPosXQML[13]
+            y: damier.boxPosYQML[13]
+            width: 90
+            height: 90
+            color: damier.boxColQML[13]
+            z: 1
+            Text {
+                id: valeur14
+                x: 34
+                y: 38
+                text: damier.boxValQML[13]
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -258,20 +293,24 @@ Window {
             anchors.leftMargin: 210
             anchors.left: parent.left
             anchors.topMargin: 10
+        }
 
-            Rectangle {
-                id: rectangle2
-                color: damier.boxColQML[2]
-                anchors.fill: parent
-                Text {
-                    id: valeur3
-                    x: 34
-                    y: 38
-                    text: damier.boxValQML[2]
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+        Rectangle {
+            id: rectangle2
+            x: damier.boxPosXQML[2]
+            y: damier.boxPosYQML[2]
+            width: 90
+            height: 90
+            color: damier.boxColQML[2]
+            z: 1
+            Text {
+                id: valeur3
+                x: 34
+                y: 38
+                text: damier.boxValQML[2]
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -286,20 +325,24 @@ Window {
             anchors.leftMargin: 210
             anchors.left: parent.left
             anchors.topMargin: 110
+        }
 
-            Rectangle {
-                id: rectangle6
-                color: damier.boxColQML[6]
-                anchors.fill: parent
-                Text {
-                    id: valeur7
-                    x: 34
-                    y: 38
-                    text: damier.boxValQML[6]
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+        Rectangle {
+            id: rectangle6
+            x: damier.boxPosXQML[6]
+            y: damier.boxPosYQML[6]
+            width: 90
+            height: 90
+            color: damier.boxColQML[6]
+            z: 1
+            Text {
+                id: valeur7
+                x: 34
+                y: 38
+                text: damier.boxValQML[6]
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -314,20 +357,24 @@ Window {
             anchors.leftMargin: 210
             anchors.left: parent.left
             anchors.topMargin: 210
+        }
 
-            Rectangle {
-                id: rectangle10
-                color: damier.boxColQML[10]
-                anchors.fill: parent
-                Text {
-                    id: valeur11
-                    x: 34
-                    y: 38
-                    text: damier.boxValQML[10]
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+        Rectangle {
+            id: rectangle10
+            x: damier.boxPosXQML[10]
+            y: damier.boxPosYQML[10]
+            width: 90
+            height: 90
+            color: damier.boxColQML[10]
+            z: 1
+            Text {
+                id: valeur11
+                x: 34
+                y: 38
+                text: damier.boxValQML[10]
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -342,20 +389,24 @@ Window {
             anchors.leftMargin: 210
             anchors.left: parent.left
             anchors.topMargin: 310
+        }
 
-            Rectangle {
-                id: rectangle14
-                color: damier.boxColQML[14]
-                anchors.fill: parent
-                Text {
-                    id: valeur15
-                    x: 34
-                    y: 38
-                    text: damier.boxValQML[14]
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+        Rectangle {
+            id: rectangle14
+            x: damier.boxPosXQML[14]
+            y: damier.boxPosYQML[14]
+            width: 90
+            height: 90
+            color: damier.boxColQML[14]
+            z: 1
+            Text {
+                id: valeur15
+                x: 34
+                y: 38
+                text: damier.boxValQML[14]
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -370,20 +421,24 @@ Window {
             anchors.leftMargin: 310
             anchors.left: parent.left
             anchors.topMargin: 10
+        }
 
-            Rectangle {
-                id: rectangle3
-                color: damier.boxColQML[3]
-                anchors.fill: parent
-                Text {
-                    id: valeur4
-                    x: 34
-                    y: 38
-                    text: damier.boxValQML[3]
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+        Rectangle {
+            id: rectangle3
+            x: damier.boxPosXQML[3]
+            y: damier.boxPosYQML[3]
+            width: 90
+            height: 90
+            color: damier.boxColQML[3]
+            z: 1
+            Text {
+                id: valeur4
+                x: 34
+                y: 38
+                text: damier.boxValQML[3]
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -398,20 +453,24 @@ Window {
             anchors.leftMargin: 310
             anchors.left: parent.left
             anchors.topMargin: 110
+        }
 
-            Rectangle {
-                id: rectangle7
-                color: damier.boxColQML[7]
-                anchors.fill: parent
-                Text {
-                    id: valeur8
-                    x: 34
-                    y: 38
-                    text: damier.boxValQML[7]
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+        Rectangle {
+            id: rectangle7
+            x: damier.boxPosXQML[7]
+            y: damier.boxPosYQML[7]
+            width: 90
+            height: 90
+            color: damier.boxColQML[7]
+            z: 1
+            Text {
+                id: valeur8
+                x: 34
+                y: 38
+                text: damier.boxValQML[7]
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -426,20 +485,24 @@ Window {
             anchors.leftMargin: 310
             anchors.left: parent.left
             anchors.topMargin: 210
+        }
 
-            Rectangle {
-                id: rectangle11
-                color: damier.boxColQML[11]
-                anchors.fill: parent
-                Text {
-                    id: valeur12
-                    x: 34
-                    y: 38
-                    text: damier.boxValQML[11]
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+        Rectangle {
+            id: rectangle11
+            x: damier.boxPosXQML[11]
+            y: damier.boxPosYQML[11]
+            width: 90
+            height: 90
+            color: damier.boxColQML[11]
+            z: 1
+            Text {
+                id: valeur12
+                x: 34
+                y: 38
+                text: damier.boxValQML[11]
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -454,39 +517,600 @@ Window {
             anchors.leftMargin: 310
             anchors.left: parent.left
             anchors.topMargin: 310
+        }
 
-            Rectangle {
-                id: rectangle15
-                color: damier.boxColQML[15]
-                anchors.fill: parent
-                Text {
-                    id: valeur16
-                    x: 34
-                    y: 38
-                    text: damier.boxValQML[15]
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.pixelSize: 12
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+        Rectangle {
+            id: rectangle15
+            x: damier.boxPosXQML[15]
+            y: damier.boxPosYQML[15]
+            width: 90
+            height: 90
+            color: damier.boxColQML[15]
+            z: 1
+            Text {
+                id: valeur16
+                x: 34
+                y: 38
+                text: damier.boxValQML[15]
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
+        StateGroup {
+            id: stateGroup0
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle; x: damier.boxPosXQML[0]; y: damier.boxPosYQML[0]}
+                },
+                    State {
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle; x: damier.boxPosXQML[0]; y: damier.boxPosYQML[0]}
+                }
+                ]
+
+        transitions: [Transition {
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                    Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+        }]
+       }
+
+        StateGroup {
+            id: stateGroup1
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle1; x: damier.boxPosXQML[1]; y: damier.boxPosYQML[1]}
+                },
+                State {
+                name: "suivant2";
+                PropertyChanges { target: rectangle1; x: damier.boxPosXQML[1]; y: damier.boxPosYQML[1]}
+            }
+                ]
+
+            transitions: [Transition {
+                        from: "*"; to: "suivant"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+                    },
+                        Transition {
+                        from: "*"; to: "suivant2"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+            }]
+        }
+
+        StateGroup {
+            id: stateGroup2
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle2; x: damier.boxPosXQML[2]; y: damier.boxPosYQML[2]}
+                },
+                    State {
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle2; x: damier.boxPosXQML[2]; y: damier.boxPosYQML[2]}
+            }
+                ]
+
+            transitions: [Transition {
+                        from: "*"; to: "suivant"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+                    },
+                        Transition {
+                        from: "*"; to: "suivant2"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+            }]
+        }
+
+        StateGroup {
+            id: stateGroup3
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle3; x: damier.boxPosXQML[3]; y: damier.boxPosYQML[3]}
+                    },
+                    State {
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle3; x: damier.boxPosXQML[3]; y: damier.boxPosYQML[3]}
+            }
+                ]
+
+            transitions: [Transition {
+                        from: "*"; to: "suivant"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+                    },
+                        Transition {
+                        from: "*"; to: "suivant2"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+            }]
+        }
+
+        StateGroup {
+            id: stateGroup4
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle4; x: damier.boxPosXQML[4]; y: damier.boxPosYQML[4]}
+                },
+                    State {
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle4; x: damier.boxPosXQML[4]; y: damier.boxPosYQML[4]}
+                }
+                ]
+
+            transitions: [Transition {
+                        from: "*"; to: "suivant"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+                    },
+                        Transition {
+                        from: "*"; to: "suivant2"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+            }]
+        }
+
+        StateGroup {
+            id: stateGroup5
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle5; x: damier.boxPosXQML[5]; y: damier.boxPosYQML[5]}
+                },
+                    State {
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle5; x: damier.boxPosXQML[5]; y: damier.boxPosYQML[5]}
+            }
+                ]
+
+            transitions: [Transition {
+                        from: "*"; to: "suivant"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+                    },
+                        Transition {
+                        from: "*"; to: "suivant2"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+            }]
+        }
+
+        StateGroup {
+            id: stateGroup6
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle6; x: damier.boxPosXQML[6]; y: damier.boxPosYQML[6]}
+                },
+                State {
+                name: "suivant2";
+                PropertyChanges { target: rectangle6; x: damier.boxPosXQML[6]; y: damier.boxPosYQML[6]}
+            }
+                ]
+
+            transitions: [Transition {
+                        from: "*"; to: "suivant"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+                    },
+                        Transition {
+                        from: "*"; to: "suivant2"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+            }]
+        }
+
+        StateGroup {
+            id: stateGroup7
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle7; x: damier.boxPosXQML[7]; y: damier.boxPosYQML[7]}
+                },
+                State {
+                name: "suivant2";
+                PropertyChanges { target: rectangle7; x: damier.boxPosXQML[7]; y: damier.boxPosYQML[7]}
+            }
+                ]
+
+            transitions: [Transition {
+                        from: "*"; to: "suivant"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+                    },
+                        Transition {
+                        from: "*"; to: "suivant2"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+            }]
+        }
+
+        StateGroup {
+            id: stateGroup8
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle8; x: damier.boxPosXQML[8]; y: damier.boxPosYQML[8]}
+                },
+                State {
+                name: "suivant2";
+                PropertyChanges { target: rectangle8; x: damier.boxPosXQML[8]; y: damier.boxPosYQML[8]}
+            }
+                ]
+
+            transitions: [Transition {
+                        from: "*"; to: "suivant"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+                    },
+                        Transition {
+                        from: "*"; to: "suivant2"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+            }]
+        }
+
+        StateGroup {
+            id: stateGroup9
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle9; x: damier.boxPosXQML[9]; y: damier.boxPosYQML[9]}
+                },
+                State {
+                name: "suivant2";
+                PropertyChanges { target: rectangle9; x: damier.boxPosXQML[9]; y: damier.boxPosYQML[9]}
+            }
+                ]
+
+            transitions: [Transition {
+                        from: "*"; to: "suivant"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+                    },
+                        Transition {
+                        from: "*"; to: "suivant2"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+            }]
+        }
+
+        StateGroup {
+            id: stateGroup10
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle10; x: damier.boxPosXQML[10]; y: damier.boxPosYQML[10]}
+                },
+                State {
+                name: "suivant2";
+                PropertyChanges { target: rectangle10; x: damier.boxPosXQML[10]; y: damier.boxPosYQML[10]}
+            }
+                ]
+
+            transitions: [Transition {
+                        from: "*"; to: "suivant"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+                    },
+                        Transition {
+                        from: "*"; to: "suivant2"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+            }]
+        }
+
+        StateGroup {
+            id: stateGroup11
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle11; x: damier.boxPosXQML[11]; y: damier.boxPosYQML[11]}
+                },
+                State {
+                name: "suivant2";
+                PropertyChanges { target: rectangle11; x: damier.boxPosXQML[11]; y: damier.boxPosYQML[11]}
+            }
+                ]
+
+            transitions: [Transition {
+                        from: "*"; to: "suivant"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+                    },
+                        Transition {
+                        from: "*"; to: "suivant2"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+            }]
+        }
+
+        StateGroup {
+            id: stateGroup12
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle12; x: damier.boxPosXQML[12]; y: damier.boxPosYQML[12]}
+                },
+                State {
+                name: "suivant2";
+                PropertyChanges { target: rectangle12; x: damier.boxPosXQML[12]; y: damier.boxPosYQML[12]}
+            }
+                ]
+
+            transitions: [Transition {
+                        from: "*"; to: "suivant"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+                    },
+                        Transition {
+                        from: "*"; to: "suivant2"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+            }]
+        }
+
+        StateGroup {
+            id: stateGroup13
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle13; x: damier.boxPosXQML[13]; y: damier.boxPosYQML[13]}
+                },
+                State {
+                name: "suivant2";
+                PropertyChanges { target: rectangle13; x: damier.boxPosXQML[13]; y: damier.boxPosYQML[13]}
+            }
+                ]
+
+            transitions: [Transition {
+                        from: "*"; to: "suivant"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+                    },
+                        Transition {
+                        from: "*"; to: "suivant2"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+            }]
+        }
+
+        StateGroup {
+            id: stateGroup14
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle14; x: damier.boxPosXQML[14]; y: damier.boxPosYQML[14]}
+                },
+                State {
+                name: "suivant2";
+                PropertyChanges { target: rectangle14; x: damier.boxPosXQML[14]; y: damier.boxPosYQML[14]}
+            }
+                ]
+
+            transitions: [Transition {
+                        from: "*"; to: "suivant"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+                    },
+                        Transition {
+                        from: "*"; to: "suivant2"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+            }]
+        }
+
+        StateGroup {
+            id: stateGroup15
+            states: [State {
+                    name: "suivant";
+                    PropertyChanges { target: rectangle15; x: damier.boxPosXQML[15]; y: damier.boxPosYQML[15]}
+                },
+                State {
+                name: "suivant2";
+                PropertyChanges { target: rectangle15; x: damier.boxPosXQML[15]; y: damier.boxPosYQML[15]}
+            }
+                ]
+
+            transitions: [Transition {
+                        from: "*"; to: "suivant"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+                    },
+                        Transition {
+                        from: "*"; to: "suivant2"; reversible: false
+                        ParallelAnimation {
+                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                        }
+            }]
+        }
+
         Keys.onPressed: {
           switch (event.key) {
             case Qt.Key_Up:
               damier.mouvement(1);
+                if (damier.controleQML === 1){
+                stateGroup0.state ='suivant'
+                stateGroup1.state ='suivant'
+                stateGroup2.state ='suivant'
+                stateGroup3.state ='suivant'
+                stateGroup4.state ='suivant'
+                stateGroup5.state ='suivant'
+                stateGroup6.state ='suivant'
+                stateGroup7.state ='suivant'
+                stateGroup8.state ='suivant'
+                stateGroup9.state ='suivant'
+                stateGroup10.state ='suivant'
+                stateGroup11.state ='suivant'
+                stateGroup12.state ='suivant'
+                stateGroup13.state ='suivant'
+                stateGroup14.state ='suivant'
+                stateGroup15.state ='suivant'
+                } else {
+                    stateGroup0.state ='suivant2'
+                    stateGroup1.state ='suivant2'
+                    stateGroup2.state ='suivant2'
+                    stateGroup3.state ='suivant2'
+                    stateGroup4.state ='suivant2'
+                    stateGroup5.state ='suivant2'
+                    stateGroup6.state ='suivant2'
+                    stateGroup7.state ='suivant2'
+                    stateGroup8.state ='suivant2'
+                    stateGroup9.state ='suivant2'
+                    stateGroup10.state ='suivant2'
+                    stateGroup11.state ='suivant2'
+                    stateGroup12.state ='suivant2'
+                    stateGroup13.state ='suivant2'
+                    stateGroup14.state ='suivant2'
+                    stateGroup15.state ='suivant2'
+                }
               break;
             case Qt.Key_Down:
               damier.mouvement(2);
+                if (damier.controleQML === 1){
+                stateGroup0.state ='suivant'
+                stateGroup1.state ='suivant'
+                stateGroup2.state ='suivant'
+                stateGroup3.state ='suivant'
+                stateGroup4.state ='suivant'
+                stateGroup5.state ='suivant'
+                stateGroup6.state ='suivant'
+                stateGroup7.state ='suivant'
+                stateGroup8.state ='suivant'
+                stateGroup9.state ='suivant'
+                stateGroup10.state ='suivant'
+                stateGroup11.state ='suivant'
+                stateGroup12.state ='suivant'
+                stateGroup13.state ='suivant'
+                stateGroup14.state ='suivant'
+                stateGroup15.state ='suivant'
+                } else {
+                    stateGroup0.state ='suivant2'
+                    stateGroup1.state ='suivant2'
+                    stateGroup2.state ='suivant2'
+                    stateGroup3.state ='suivant2'
+                    stateGroup4.state ='suivant2'
+                    stateGroup5.state ='suivant2'
+                    stateGroup6.state ='suivant2'
+                    stateGroup7.state ='suivant2'
+                    stateGroup8.state ='suivant2'
+                    stateGroup9.state ='suivant2'
+                    stateGroup10.state ='suivant2'
+                    stateGroup11.state ='suivant2'
+                    stateGroup12.state ='suivant2'
+                    stateGroup13.state ='suivant2'
+                    stateGroup14.state ='suivant2'
+                    stateGroup15.state ='suivant2'
+                }
               break;
             case Qt.Key_Left:
               damier.mouvement(3);
+                if (damier.controleQML === 1){
+                stateGroup0.state ='suivant'
+                stateGroup1.state ='suivant'
+                stateGroup2.state ='suivant'
+                stateGroup3.state ='suivant'
+                stateGroup4.state ='suivant'
+                stateGroup5.state ='suivant'
+                stateGroup6.state ='suivant'
+                stateGroup7.state ='suivant'
+                stateGroup8.state ='suivant'
+                stateGroup9.state ='suivant'
+                stateGroup10.state ='suivant'
+                stateGroup11.state ='suivant'
+                stateGroup12.state ='suivant'
+                stateGroup13.state ='suivant'
+                stateGroup14.state ='suivant'
+                stateGroup15.state ='suivant'
+                } else {
+                    stateGroup0.state ='suivant2'
+                    stateGroup1.state ='suivant2'
+                    stateGroup2.state ='suivant2'
+                    stateGroup3.state ='suivant2'
+                    stateGroup4.state ='suivant2'
+                    stateGroup5.state ='suivant2'
+                    stateGroup6.state ='suivant2'
+                    stateGroup7.state ='suivant2'
+                    stateGroup8.state ='suivant2'
+                    stateGroup9.state ='suivant2'
+                    stateGroup10.state ='suivant2'
+                    stateGroup11.state ='suivant2'
+                    stateGroup12.state ='suivant2'
+                    stateGroup13.state ='suivant2'
+                    stateGroup14.state ='suivant2'
+                    stateGroup15.state ='suivant2'
+                }
               break;
             case Qt.Key_Right:
               damier.mouvement(4);
+                if (damier.controleQML === 1){
+                stateGroup0.state ='suivant'
+                stateGroup1.state ='suivant'
+                stateGroup2.state ='suivant'
+                stateGroup3.state ='suivant'
+                stateGroup4.state ='suivant'
+                stateGroup5.state ='suivant'
+                stateGroup6.state ='suivant'
+                stateGroup7.state ='suivant'
+                stateGroup8.state ='suivant'
+                stateGroup9.state ='suivant'
+                stateGroup10.state ='suivant'
+                stateGroup11.state ='suivant'
+                stateGroup12.state ='suivant'
+                stateGroup13.state ='suivant'
+                stateGroup14.state ='suivant'
+                stateGroup15.state ='suivant'
+                } else {
+                    stateGroup0.state ='suivant2'
+                    stateGroup1.state ='suivant2'
+                    stateGroup2.state ='suivant2'
+                    stateGroup3.state ='suivant2'
+                    stateGroup4.state ='suivant2'
+                    stateGroup5.state ='suivant2'
+                    stateGroup6.state ='suivant2'
+                    stateGroup7.state ='suivant2'
+                    stateGroup8.state ='suivant2'
+                    stateGroup9.state ='suivant2'
+                    stateGroup10.state ='suivant2'
+                    stateGroup11.state ='suivant2'
+                    stateGroup12.state ='suivant2'
+                    stateGroup13.state ='suivant2'
+                    stateGroup14.state ='suivant2'
+                    stateGroup15.state ='suivant2'
+                }
               break;
           }
        }
     }
+
 
 
 

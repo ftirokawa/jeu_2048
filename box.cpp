@@ -1,9 +1,12 @@
 #include "box.h"
 
-Box::Box(int val, string couleur)
+Box::Box(int id, int x, int y, int val, string couleur)
 {
+    this->id = id;
     this->val = val;
     this->couleur = couleur;
+    this->x = x;
+    this->y = y;
 }
 
 void Box::ChangeVal (){
@@ -83,5 +86,32 @@ ostream& operator <<(ostream& s, const Box &A){
     s << "La boîte a pour couleur : " << couleur << endl;
     s <<endl;
     return s;
+}
+
+int Box::getX(){
+    return x;
+}
+
+void Box::setX(int x){
+    this->x = x;
+    return;
+}
+
+int Box::getY(){
+    return y;
+}
+
+void Box::setY(int y){
+    this->y = y;
+    return;
+}
+
+int Box::getID(){
+    return id;
+}
+
+void Box::setID(int id){
+    this->id = id;
+    return;
 }
 
