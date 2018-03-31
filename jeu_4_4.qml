@@ -1256,4 +1256,57 @@ Window {
         font.pixelSize: 14
     }
 
+    Rectangle {
+        function change_op(a) {
+            if (a==true){
+                return 1;
+            }
+            else{
+                return 0.5;
+            }
+
+
+        }
+
+        id: rectangle16
+        x: 35
+        y: 190
+        width: 410
+        height: 410
+        opacity: change_op(damier.overBoolQML)
+        border.color: "#00000000"
+
+    }
+
+    Rectangle {
+        function change_op(a) {
+            if (a==true){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        }
+
+        id: rectangle17
+        x: -5
+        y: 4
+        width: 174
+        height: 92
+        color: "#f67b13"
+        opacity: change_op(damier.overBoolQML)
+        anchors.horizontalCenter: rectangle16.horizontalCenter
+        Text {
+            id: text5
+            color: "#ffffff"
+            text: qsTr("GAME OVER")
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.bold: true
+            font.pixelSize: 24
+            anchors.fill: parent
+        }
+        anchors.verticalCenter: rectangle16.verticalCenter
+    }
+
 }
