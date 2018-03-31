@@ -6,10 +6,12 @@ Damier::Damier(int nb_lignes, int nb_colonnes, int borne_inf, int borne_sup, QOb
     Redim(nb_lignes, nb_colonnes, borne_inf, borne_sup);
     pontuation=0;
     best=0;
+    fin_du_jeu=false;
     emit boxValDemandee();
     emit couleurDemandee();
     emit score_changed();
     emit best_changed();
+    emit game_is_over();
 
 }
 
@@ -71,6 +73,8 @@ void Damier::Remplir(int valInit){
             mat[i][j] = Box(valInit, "#ccc0b4");
         }
     }
+    emit boxValDemandee();
+    emit couleurDemandee();
     return;
 }
 
@@ -261,10 +265,14 @@ void Damier::mouvement(int direction){
             }
         }
     }
+    if(remplit){
+        fin_du_jeu=true;
+    }
     emit boxValDemandee();
     emit couleurDemandee();
     emit score_changed();
     emit best_changed();
+    emit game_is_over();
 
 }
 
@@ -277,6 +285,7 @@ bool Damier::damierRemplit(){
             }
         }
     }
+
     return remplit;
 }
 
@@ -448,8 +457,14 @@ void Damier::new_best(int value){
 void Damier::new_game(){
     Redim(nb_lignes, nb_colonnes, borne_inf, borne_sup);
     pontuation=0;
+    fin_du_jeu=false;
     emit boxValDemandee();
     emit couleurDemandee();
     emit score_changed();
     emit best_changed();
+    emit game_is_over();
+}
+
+bool Damier::readGameOver(){
+    return fin_du_jeu;
 }
