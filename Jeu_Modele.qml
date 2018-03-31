@@ -153,6 +153,9 @@ Item {
         }
 
         Rectangle {
+
+
+
             id: grille
             x: 35
             y: 190

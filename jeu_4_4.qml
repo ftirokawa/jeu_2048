@@ -11,6 +11,15 @@ Window {
     title: qsTr("Hello World")
 
     Rectangle {
+        function color_box(val){
+            if(val==0){
+                return 0;
+            }
+            else{
+                return 1;
+            }
+        }
+
         id: grille
         x: 40
         width: 410
@@ -33,6 +42,7 @@ Window {
             anchors.leftMargin: 10
             anchors.left: parent.left
             anchors.topMargin: 10
+
         }
 
         Rectangle {
@@ -43,6 +53,7 @@ Window {
             height: 90
             color: damier.boxColQML[0]
             z: 1
+            opacity: parent.color_box(damier.boxValQML[0])
 
             Text {
                 id: valeur1
@@ -52,7 +63,7 @@ Window {
                 text: damier.boxValQML[0]
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
             }
 
         }
@@ -78,13 +89,15 @@ Window {
             height: 90
             color: damier.boxColQML[4]
             z: 1
+            opacity: parent.color_box(damier.boxValQML[4])
             Text {
                 id: valeur5
                 x: 34
                 y: 38
                 text: damier.boxValQML[4]
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
+
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -111,13 +124,14 @@ Window {
             height: 90
             color: damier.boxColQML[8]
             z: 1
+            opacity: parent.color_box(damier.boxValQML[8])
             Text {
                 id: valeur9
                 x: 34
                 y: 38
                 text: damier.boxValQML[8]
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -143,13 +157,14 @@ Window {
             height: 90
             color: damier.boxColQML[12]
             z: 1
+            opacity: parent.color_box(damier.boxValQML[12])
             Text {
                 id: valeur13
                 x: 34
                 y: 38
                 text: damier.boxValQML[12]
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -175,13 +190,14 @@ Window {
             height: 90
             color: damier.boxColQML[1]
             z: 1
+            opacity: parent.color_box(damier.boxValQML[1])
             Text {
                 id: valeur2
                 x: 34
                 y: 38
                 text: damier.boxValQML[1]
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -207,13 +223,14 @@ Window {
             height: 90
             color: damier.boxColQML[5]
             z: 1
+            opacity: parent.color_box(damier.boxValQML[5])
             Text {
                 id: valeur6
                 x: 34
                 y: 38
                 text: damier.boxValQML[5]
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -239,13 +256,14 @@ Window {
             height: 90
             color: damier.boxColQML[9]
             z: 1
+            opacity: parent.color_box(damier.boxValQML[9])
             Text {
                 id: valeur10
                 x: 34
                 y: 38
                 text: damier.boxValQML[9]
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -271,13 +289,14 @@ Window {
             height: 90
             color: damier.boxColQML[13]
             z: 1
+            opacity: parent.color_box(damier.boxValQML[13])
             Text {
                 id: valeur14
                 x: 34
                 y: 38
                 text: damier.boxValQML[13]
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -303,13 +322,14 @@ Window {
             height: 90
             color: damier.boxColQML[2]
             z: 1
+            opacity: parent.color_box(damier.boxValQML[2])
             Text {
                 id: valeur3
                 x: 34
                 y: 38
                 text: damier.boxValQML[2]
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -335,13 +355,14 @@ Window {
             height: 90
             color: damier.boxColQML[6]
             z: 1
+            opacity: parent.color_box(damier.boxValQML[6])
             Text {
                 id: valeur7
                 x: 34
                 y: 38
                 text: damier.boxValQML[6]
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -367,13 +388,14 @@ Window {
             height: 90
             color: damier.boxColQML[10]
             z: 1
+            opacity: parent.color_box(damier.boxValQML[10])
             Text {
                 id: valeur11
                 x: 34
                 y: 38
                 text: damier.boxValQML[10]
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -399,13 +421,14 @@ Window {
             height: 90
             color: damier.boxColQML[14]
             z: 1
+            opacity: parent.color_box(damier.boxValQML[14])
             Text {
                 id: valeur15
                 x: 34
                 y: 38
                 text: damier.boxValQML[14]
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -431,13 +454,14 @@ Window {
             height: 90
             color: damier.boxColQML[3]
             z: 1
+            opacity: parent.color_box(damier.boxValQML[3])
             Text {
                 id: valeur4
                 x: 34
                 y: 38
                 text: damier.boxValQML[3]
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -462,6 +486,7 @@ Window {
             width: 90
             height: 90
             color: damier.boxColQML[7]
+            opacity: parent.color_box(damier.boxValQML[7])
             z: 1
             Text {
                 id: valeur8
@@ -469,7 +494,7 @@ Window {
                 y: 38
                 text: damier.boxValQML[7]
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -494,6 +519,7 @@ Window {
             width: 90
             height: 90
             color: damier.boxColQML[11]
+            opacity: parent.color_box(damier.boxValQML[11])
             z: 1
             Text {
                 id: valeur12
@@ -501,7 +527,7 @@ Window {
                 y: 38
                 text: damier.boxValQML[11]
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -526,6 +552,7 @@ Window {
             width: 90
             height: 90
             color: damier.boxColQML[15]
+            opacity: parent.color_box(damier.boxValQML[15])
             z: 1
             Text {
                 id: valeur16
@@ -533,7 +560,7 @@ Window {
                 y: 38
                 text: damier.boxValQML[15]
                 anchors.verticalCenter: parent.verticalCenter
-                font.pixelSize: 12
+                font.pixelSize: 24
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
