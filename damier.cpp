@@ -552,6 +552,7 @@ void Damier::new_game(){
     emit best_changed();
     emit game_is_over();
     emit you_win();
+    emit boxOpacityDemandee();
 }
 
 QString Damier::readGameOver(){
@@ -655,6 +656,7 @@ void Damier::actualise_state(state *ref){
     emit boxValDemandee();
     emit couleurDemandee();
     emit score_changed();
+    emit boxOpacityDemandee();
 }
 
 
@@ -801,3 +803,4 @@ void Damier::verify_win(){
         }
     }
 }
+
