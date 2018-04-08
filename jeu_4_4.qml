@@ -1342,11 +1342,11 @@ Window {
 
     Rectangle {
         function change_op(a) {
-            if (a==true){
-                return 1;
+            if (a==1){
+                return 0.5;
             }
             else{
-                return 0.5;
+                return 0;
             }
 
 
@@ -1364,7 +1364,7 @@ Window {
 
     Rectangle {
         function change_op(a) {
-            if (a==true){
+            if (a==1){
                 return 1;
             }
             else{
@@ -1441,7 +1441,58 @@ Window {
         }
     }
 
+    Rectangle {
+        function change_op(a) {
+            if (a==1){
+                return 0.5;
+            }
+            else{
+                return 0;
+            }
 
+
+        }
+
+        id: rect_parent_win
+        x: 35
+        y: 190
+        width: 410
+        height: 410
+        opacity: change_op(damier.winBoolQML)
+        border.color: "#00000000"
+
+    }
+
+    Rectangle {
+        function change_op(a) {
+            if (a==1){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        }
+
+        id: rect_you_win
+        x: -5
+        y: 4
+        width: 174
+        height: 92
+        color: "#f67b13"
+        opacity: change_op(damier.winBoolQML)
+        anchors.horizontalCenter: rect_parent_win.horizontalCenter
+        Text {
+            id: text7
+            color: "#ffffff"
+            text: qsTr("YOU WIN !")
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.bold: true
+            font.pixelSize: 24
+            anchors.fill: parent
+        }
+        anchors.verticalCenter: rect_parent_win.verticalCenter
+    }
 
 
 }

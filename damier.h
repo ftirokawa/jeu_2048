@@ -30,8 +30,8 @@ public:
     Q_PROPERTY(QList<int> boxPosYQML READ getBoxY NOTIFY boxYDemandee)
     Q_PROPERTY(QList<int> boxOpacityQML READ getBoxOpacity NOTIFY boxOpacityDemandee)
     Q_PROPERTY(int controleQML READ controleMethode NOTIFY controleChange)
-
     Q_PROPERTY(QString overBoolQML READ readGameOver NOTIFY game_is_over)
+    Q_PROPERTY(QString winBoolQML READ readWin NOTIFY you_win)
 
 
     explicit Damier(int nb_lignes, int nb_colonnes, int borne_inf, int borne_sup, QObject *parent = nullptr); // La valeur par défaut est écrite juste dans le fichier .h
@@ -69,6 +69,9 @@ public:
     void delete_states_apres();
     void delete_tous_states();
     void compare_state();
+    void verify_game_over();
+    void debug_matrix();
+    void verify_win();
 
 
     QList<QString> getBoxVal();
@@ -80,7 +83,8 @@ public:
     QList<int> getBoxY();
     QList<int> getBoxOpacity();
 
-    bool readGameOver();
+    QString readGameOver();
+    QString readWin();
 
 
     Q_INVOKABLE void mouvement(int direction);
@@ -105,6 +109,7 @@ private:
     state* currentSt=NULL;
     state* premierSt=NULL;
     bool change=false;
+    int win=0;
 
 signals:
     void boxValDemandee();
@@ -116,6 +121,8 @@ signals:
     void boxOpacityDemandee();
     void controleChange();
     void game_is_over();
+    void you_win();
+
 
 
 public slots:
