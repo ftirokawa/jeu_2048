@@ -9,6 +9,7 @@ Damier::Damier(int nb_lignes, int nb_colonnes, int borne_inf, int borne_sup, QOb
     best=0;
     controle = 0;
     fin_du_jeu=false;
+    win=false;
     emit boxValDemandee();
     emit couleurDemandee();
     emit score_changed();
@@ -17,6 +18,7 @@ Damier::Damier(int nb_lignes, int nb_colonnes, int borne_inf, int borne_sup, QOb
     emit boxYDemandee();
     emit controleChange();
     emit game_is_over();
+    emit you_win();
 
 
 }
@@ -489,7 +491,7 @@ void Damier::mouvementDroite(){
                 } else{ // Sinon si la box a la même valeur que la box en mouvement
                     if (mat[i][w].getVal() == mat[x][y].getVal() && fusion[i][w] == 0  && fusion[x][y] == 0){ // 3) Fusion
                        if((y-w)==1||(w-y)==1){
-                           mat[i][w].ChangeVal();
+                            mat[i][w].ChangeVal();
                             mat[i][w].changeCouleur();
                             mat[x][y] = Box(mat[x][y].getID(), y*100+10, x*100+10);
                             add_score(mat[w][j].getVal());
@@ -538,11 +540,13 @@ void Damier::new_game(){
     Redim(nb_lignes, nb_colonnes, borne_inf, borne_sup);
     pontuation=0;
     fin_du_jeu=false;
+    win=false;
     emit boxValDemandee();
     emit couleurDemandee();
     emit score_changed();
     emit best_changed();
     emit game_is_over();
+    emit you_win();
 }
 
 QString Damier::readGameOver(){
@@ -751,10 +755,24 @@ void Damier::verify_game_over(){
 }
 
 void Damier::debug_matrix(){
-    qDebug() << "aloy";
     qDebug() << mat[0][0].getVal() << mat[0][1].getVal()<< mat[0][2].getVal() << mat[0][3].getVal() ;
     qDebug() << mat[1][0].getVal() << mat[1][1].getVal()<< mat[1][2].getVal() << mat[1][3].getVal() ;
     qDebug() << mat[2][0].getVal() << mat[2][1].getVal()<< mat[2][2].getVal() << mat[2][3].getVal() ;
     qDebug() << mat[3][0].getVal() << mat[3][1].getVal()<< mat[3][2].getVal() << mat[3][3].getVal() ;
 
+}
+
+QString Damier::readWin(){
+    return(QString::number(win));
+}
+
+void Damier::verify_win(){
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            if(mat[i][j].getVal()==2048){
+                win=1;
+                emit you_win();
+            }
+        }
+    }
 }
