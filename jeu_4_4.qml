@@ -11,14 +11,6 @@ Window {
     title: qsTr("Hello World")
 
     Rectangle {
-        function color_box(val){
-            if(val==0){
-                return 0;
-            }
-            else{
-                return 1;
-            }
-        }
 
         id: grille
         x: 40
@@ -53,7 +45,7 @@ Window {
             height: 90
             color: damier.boxColQML[0]
             z: 1
-            opacity: parent.color_box(damier.boxValQML[0])
+            opacity: damier.boxOpacityQML[0]
 
             Text {
                 id: valeur1
@@ -89,7 +81,7 @@ Window {
             height: 90
             color: damier.boxColQML[4]
             z: 1
-            opacity: parent.color_box(damier.boxValQML[4])
+            opacity: damier.boxOpacityQML[4]
             Text {
                 id: valeur5
                 x: 34
@@ -124,7 +116,7 @@ Window {
             height: 90
             color: damier.boxColQML[8]
             z: 1
-            opacity: parent.color_box(damier.boxValQML[8])
+            opacity: damier.boxOpacityQML[8]
             Text {
                 id: valeur9
                 x: 34
@@ -157,7 +149,7 @@ Window {
             height: 90
             color: damier.boxColQML[12]
             z: 1
-            opacity: parent.color_box(damier.boxValQML[12])
+            opacity: damier.boxOpacityQML[12]
             Text {
                 id: valeur13
                 x: 34
@@ -190,7 +182,7 @@ Window {
             height: 90
             color: damier.boxColQML[1]
             z: 1
-            opacity: parent.color_box(damier.boxValQML[1])
+            opacity: damier.boxOpacityQML[1]
             Text {
                 id: valeur2
                 x: 34
@@ -223,7 +215,7 @@ Window {
             height: 90
             color: damier.boxColQML[5]
             z: 1
-            opacity: parent.color_box(damier.boxValQML[5])
+            opacity: damier.boxOpacityQML[5]
             Text {
                 id: valeur6
                 x: 34
@@ -256,7 +248,7 @@ Window {
             height: 90
             color: damier.boxColQML[9]
             z: 1
-            opacity: parent.color_box(damier.boxValQML[9])
+            opacity: damier.boxOpacityQML[9]
             Text {
                 id: valeur10
                 x: 34
@@ -289,7 +281,7 @@ Window {
             height: 90
             color: damier.boxColQML[13]
             z: 1
-            opacity: parent.color_box(damier.boxValQML[13])
+            opacity: damier.boxOpacityQML[13]
             Text {
                 id: valeur14
                 x: 34
@@ -322,7 +314,7 @@ Window {
             height: 90
             color: damier.boxColQML[2]
             z: 1
-            opacity: parent.color_box(damier.boxValQML[2])
+            opacity: damier.boxOpacityQML[2]
             Text {
                 id: valeur3
                 x: 34
@@ -355,7 +347,7 @@ Window {
             height: 90
             color: damier.boxColQML[6]
             z: 1
-            opacity: parent.color_box(damier.boxValQML[6])
+            opacity: damier.boxOpacityQML[6]
             Text {
                 id: valeur7
                 x: 34
@@ -388,7 +380,7 @@ Window {
             height: 90
             color: damier.boxColQML[10]
             z: 1
-            opacity: parent.color_box(damier.boxValQML[10])
+            opacity: damier.boxOpacityQML[10]
             Text {
                 id: valeur11
                 x: 34
@@ -421,7 +413,7 @@ Window {
             height: 90
             color: damier.boxColQML[14]
             z: 1
-            opacity: parent.color_box(damier.boxValQML[14])
+            opacity: damier.boxOpacityQML[14]
             Text {
                 id: valeur15
                 x: 34
@@ -454,7 +446,7 @@ Window {
             height: 90
             color: damier.boxColQML[3]
             z: 1
-            opacity: parent.color_box(damier.boxValQML[3])
+            opacity: damier.boxOpacityQML[3]
             Text {
                 id: valeur4
                 x: 34
@@ -486,7 +478,7 @@ Window {
             width: 90
             height: 90
             color: damier.boxColQML[7]
-            opacity: parent.color_box(damier.boxValQML[7])
+            opacity: damier.boxOpacityQML[7]
             z: 1
             Text {
                 id: valeur8
@@ -519,7 +511,7 @@ Window {
             width: 90
             height: 90
             color: damier.boxColQML[11]
-            opacity: parent.color_box(damier.boxValQML[11])
+            opacity: damier.boxOpacityQML[11]
             z: 1
             Text {
                 id: valeur12
@@ -552,7 +544,7 @@ Window {
             width: 90
             height: 90
             color: damier.boxColQML[15]
-            opacity: parent.color_box(damier.boxValQML[15])
+            opacity: damier.boxOpacityQML[15]
             z: 1
             Text {
                 id: valeur16
@@ -568,13 +560,12 @@ Window {
             id: stateGroup0
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle; x: damier.boxPosXQML[0]; y: damier.boxPosYQML[0]; color: damier.boxColQML[0]}
-                    PropertyChanges { target: valeur1; text: damier.boxValQML[0];}
+                    PropertyChanges { target: rectangle; x: damier.boxPosXQML[0]; y: damier.boxPosYQML[0]; opacity: damier.boxOpacityQML[0]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle; x: damier.boxPosXQML[0]; y: damier.boxPosYQML[0]; color: damier.boxColQML[0]}
-                    PropertyChanges { target: valeur1; text: damier.boxValQML[0];}
+                    PropertyChanges { target: rectangle; x: damier.boxPosXQML[0]; y: damier.boxPosYQML[0]; opacity: damier.boxOpacityQML[0]}
+
                 }
             ]
 
@@ -583,8 +574,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur1; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -592,8 +582,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur1; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -602,13 +591,11 @@ Window {
             id: stateGroup1
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle1; x: damier.boxPosXQML[1]; y: damier.boxPosYQML[1]; color: damier.boxColQML[1]}
-                    PropertyChanges { target: valeur2; text: damier.boxValQML[1];}
+                    PropertyChanges { target: rectangle1; x: damier.boxPosXQML[1]; y: damier.boxPosYQML[1];  opacity: damier.boxOpacityQML[1]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle1; x: damier.boxPosXQML[1]; y: damier.boxPosYQML[1]; color: damier.boxColQML[1]}
-                    PropertyChanges { target: valeur2; text: damier.boxValQML[1];}
+                    PropertyChanges { target: rectangle1; x: damier.boxPosXQML[1]; y: damier.boxPosYQML[1];  opacity: damier.boxOpacityQML[1]}
                 }
             ]
 
@@ -617,8 +604,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle1; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle1; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle1; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur2; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle1; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -626,8 +612,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle1; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle1; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle1; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur2; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle1; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -636,13 +621,11 @@ Window {
             id: stateGroup2
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle2; x: damier.boxPosXQML[2]; y: damier.boxPosYQML[2]; color: damier.boxColQML[2]}
-                    PropertyChanges { target: valeur3; text: damier.boxValQML[2];}
+                    PropertyChanges { target: rectangle2; x: damier.boxPosXQML[2]; y: damier.boxPosYQML[2]; opacity: damier.boxOpacityQML[2]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle2; x: damier.boxPosXQML[2]; y: damier.boxPosYQML[2]; color: damier.boxColQML[2]}
-                    PropertyChanges { target: valeur3; text: damier.boxValQML[2];}
+                    PropertyChanges { target: rectangle2; x: damier.boxPosXQML[2]; y: damier.boxPosYQML[2]; opacity: damier.boxOpacityQML[2]}
                 }
             ]
 
@@ -651,8 +634,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle2; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle2; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle2; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur3; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle2; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -660,8 +642,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle2; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle2; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle2; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur3; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle2; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -670,13 +651,11 @@ Window {
             id: stateGroup3
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle3; x: damier.boxPosXQML[3]; y: damier.boxPosYQML[3]; color: damier.boxColQML[3]}
-                    PropertyChanges { target: valeur4; text: damier.boxValQML[3];}
+                    PropertyChanges { target: rectangle3; x: damier.boxPosXQML[3]; y: damier.boxPosYQML[3]; opacity: damier.boxOpacityQML[3]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle3; x: damier.boxPosXQML[3]; y: damier.boxPosYQML[3]; color: damier.boxColQML[3]}
-                    PropertyChanges { target: valeur4; text: damier.boxValQML[3];}
+                    PropertyChanges { target: rectangle3; x: damier.boxPosXQML[3]; y: damier.boxPosYQML[3]; opacity: damier.boxOpacityQML[3]}
                 }
             ]
 
@@ -685,8 +664,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle3; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle3; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle3; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur4; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle3; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -694,8 +672,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle3; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle3; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle3; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur4; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle3; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -704,13 +681,11 @@ Window {
             id: stateGroup4
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle4; x: damier.boxPosXQML[4]; y: damier.boxPosYQML[4]; color: damier.boxColQML[4]}
-                    PropertyChanges { target: valeur5; text: damier.boxValQML[4];}
+                    PropertyChanges { target: rectangle4; x: damier.boxPosXQML[4]; y: damier.boxPosYQML[4]; opacity: damier.boxOpacityQML[4]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle4; x: damier.boxPosXQML[4]; y: damier.boxPosYQML[4]; color: damier.boxColQML[4]}
-                    PropertyChanges { target: valeur5; text: damier.boxValQML[4];}
+                    PropertyChanges { target: rectangle4; x: damier.boxPosXQML[4]; y: damier.boxPosYQML[4]; opacity: damier.boxOpacityQML[4]}
                 }
             ]
 
@@ -719,8 +694,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle4; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle4; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle4; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur5; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle4; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -728,8 +702,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle4; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle4; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle4; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur5; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle4; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -738,13 +711,11 @@ Window {
             id: stateGroup5
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle5; x: damier.boxPosXQML[5]; y: damier.boxPosYQML[5]; color: damier.boxColQML[5]}
-                    PropertyChanges { target: valeur6; text: damier.boxValQML[5];}
+                    PropertyChanges { target: rectangle5; x: damier.boxPosXQML[5]; y: damier.boxPosYQML[5]; opacity: damier.boxOpacityQML[5]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle5; x: damier.boxPosXQML[5]; y: damier.boxPosYQML[5]; color: damier.boxColQML[5]}
-                    PropertyChanges { target: valeur6; text: damier.boxValQML[5];}
+                    PropertyChanges { target: rectangle5; x: damier.boxPosXQML[5]; y: damier.boxPosYQML[5]; opacity: damier.boxOpacityQML[5]}
                 }
             ]
 
@@ -753,8 +724,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle5; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle5; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle5; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur6; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle5; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -762,8 +732,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle5; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle5; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle5; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur6; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle5; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -772,13 +741,11 @@ Window {
             id: stateGroup6
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle6; x: damier.boxPosXQML[6]; y: damier.boxPosYQML[6]; color: damier.boxColQML[6]}
-                    PropertyChanges { target: valeur7; text: damier.boxValQML[6];}
+                    PropertyChanges { target: rectangle6; x: damier.boxPosXQML[6]; y: damier.boxPosYQML[6]; opacity: damier.boxOpacityQML[6]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle6; x: damier.boxPosXQML[6]; y: damier.boxPosYQML[6]; color: damier.boxColQML[6]}
-                    PropertyChanges { target: valeur7; text: damier.boxValQML[6];}
+                    PropertyChanges { target: rectangle6; x: damier.boxPosXQML[6]; y: damier.boxPosYQML[6]; opacity: damier.boxOpacityQML[6]}
                 }
             ]
 
@@ -787,8 +754,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle6; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle6; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle6; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur7; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle6; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -796,8 +762,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle6; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle6; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle6; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur7; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle6; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -806,13 +771,11 @@ Window {
             id: stateGroup7
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle7; x: damier.boxPosXQML[7]; y: damier.boxPosYQML[7]; color: damier.boxColQML[7]}
-                    PropertyChanges { target: valeur8; text: damier.boxValQML[7];}
+                    PropertyChanges { target: rectangle7; x: damier.boxPosXQML[7]; y: damier.boxPosYQML[7]; opacity: damier.boxOpacityQML[7]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle7; x: damier.boxPosXQML[7]; y: damier.boxPosYQML[7]; color: damier.boxColQML[7]}
-                    PropertyChanges { target: valeur8; text: damier.boxValQML[7];}
+                    PropertyChanges { target: rectangle7; x: damier.boxPosXQML[7]; y: damier.boxPosYQML[7]; opacity: damier.boxOpacityQML[7]}
                 }
             ]
 
@@ -821,8 +784,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle7; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle7; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle7; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur8; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle7; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -830,8 +792,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle7; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle7; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle7; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur8; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle7; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -840,13 +801,11 @@ Window {
             id: stateGroup8
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle8; x: damier.boxPosXQML[8]; y: damier.boxPosYQML[8]; color: damier.boxColQML[8]}
-                    PropertyChanges { target: valeur9; text: damier.boxValQML[8];}
+                    PropertyChanges { target: rectangle8; x: damier.boxPosXQML[8]; y: damier.boxPosYQML[8]; opacity: damier.boxOpacityQML[8]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle8; x: damier.boxPosXQML[8]; y: damier.boxPosYQML[8]; color: damier.boxColQML[8]}
-                    PropertyChanges { target: valeur9; text: damier.boxValQML[8];}
+                    PropertyChanges { target: rectangle8; x: damier.boxPosXQML[8]; y: damier.boxPosYQML[8]; opacity: damier.boxOpacityQML[8]}
                 }
             ]
 
@@ -855,8 +814,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle8; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle8; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle8; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur9; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle8; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -864,8 +822,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle8; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle8; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle8; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur9; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle8; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -874,13 +831,11 @@ Window {
             id: stateGroup9
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle9; x: damier.boxPosXQML[9]; y: damier.boxPosYQML[9]; color: damier.boxColQML[9]}
-                    PropertyChanges { target: valeur10; text: damier.boxValQML[9];}
+                    PropertyChanges { target: rectangle9; x: damier.boxPosXQML[9]; y: damier.boxPosYQML[9]; opacity: damier.boxOpacityQML[9]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle9; x: damier.boxPosXQML[9]; y: damier.boxPosYQML[9]; color: damier.boxColQML[9]}
-                    PropertyChanges { target: valeur10; text: damier.boxValQML[9];}
+                    PropertyChanges { target: rectangle9; x: damier.boxPosXQML[9]; y: damier.boxPosYQML[9]; opacity: damier.boxOpacityQML[9]}
                 }
             ]
 
@@ -889,8 +844,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle9; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle9; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle9; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur10; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle9; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -898,8 +852,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle9; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle9; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle9; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur10; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle9; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -908,13 +861,11 @@ Window {
             id: stateGroup10
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle10; x: damier.boxPosXQML[10]; y: damier.boxPosYQML[10]; color: damier.boxColQML[10]}
-                    PropertyChanges { target: valeur11; text: damier.boxValQML[10];}
+                    PropertyChanges { target: rectangle10; x: damier.boxPosXQML[10]; y: damier.boxPosYQML[10]; opacity: damier.boxOpacityQML[10]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle10; x: damier.boxPosXQML[10]; y: damier.boxPosYQML[10]; color: damier.boxColQML[10]}
-                    PropertyChanges { target: valeur11; text: damier.boxValQML[10];}
+                    PropertyChanges { target: rectangle10; x: damier.boxPosXQML[10]; y: damier.boxPosYQML[10]; opacity: damier.boxOpacityQML[10]}
                 }
             ]
 
@@ -923,8 +874,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle10; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle10; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle10; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur11; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle10; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -932,8 +882,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle10; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle10; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle10; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur11; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle10; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -942,13 +891,11 @@ Window {
             id: stateGroup11
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle11; x: damier.boxPosXQML[11]; y: damier.boxPosYQML[11]; color: damier.boxColQML[11]}
-                    PropertyChanges { target: valeur12; text: damier.boxValQML[11];}
+                    PropertyChanges { target: rectangle11; x: damier.boxPosXQML[11]; y: damier.boxPosYQML[11]; opacity: damier.boxOpacityQML[11]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle11; x: damier.boxPosXQML[11]; y: damier.boxPosYQML[11]; color: damier.boxColQML[11]}
-                    PropertyChanges { target: valeur12; text: damier.boxValQML[11];}
+                    PropertyChanges { target: rectangle11; x: damier.boxPosXQML[11]; y: damier.boxPosYQML[11]; opacity: damier.boxOpacityQML[11]}
                 }
             ]
 
@@ -957,8 +904,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle11; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle11; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle11; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur12; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle11; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -966,8 +912,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle11; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle11; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle11; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur12; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle11; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -976,13 +921,11 @@ Window {
             id: stateGroup12
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle12; x: damier.boxPosXQML[12]; y: damier.boxPosYQML[12]; color: damier.boxColQML[12]}
-                    PropertyChanges { target: valeur13; text: damier.boxValQML[12];}
+                    PropertyChanges { target: rectangle12; x: damier.boxPosXQML[12]; y: damier.boxPosYQML[12]; opacity: damier.boxOpacityQML[12]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle12; x: damier.boxPosXQML[12]; y: damier.boxPosYQML[12]; color: damier.boxColQML[12]}
-                    PropertyChanges { target: valeur13; text: damier.boxValQML[12];}
+                    PropertyChanges { target: rectangle12; x: damier.boxPosXQML[12]; y: damier.boxPosYQML[12]; opacity: damier.boxOpacityQML[12]}
                 }
             ]
 
@@ -991,8 +934,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle12; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle12; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle12; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur13; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle12; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -1000,8 +942,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle12; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle12; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle12; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur13; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle12; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -1010,13 +951,11 @@ Window {
             id: stateGroup13
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle13; x: damier.boxPosXQML[13]; y: damier.boxPosYQML[13]; color: damier.boxColQML[13]}
-                    PropertyChanges { target: valeur14; text: damier.boxValQML[13];}
+                    PropertyChanges { target: rectangle13; x: damier.boxPosXQML[13]; y: damier.boxPosYQML[13]; opacity: damier.boxOpacityQML[13]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle13; x: damier.boxPosXQML[13]; y: damier.boxPosYQML[13]; color: damier.boxColQML[13]}
-                    PropertyChanges { target: valeur14; text: damier.boxValQML[13];}
+                    PropertyChanges { target: rectangle13; x: damier.boxPosXQML[13]; y: damier.boxPosYQML[13]; opacity: damier.boxOpacityQML[13]}
                 }
             ]
 
@@ -1025,8 +964,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle13; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle13; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle13; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur14; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle13; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -1034,8 +972,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle13; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle13; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle13; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur14; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle13; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -1044,13 +981,11 @@ Window {
             id: stateGroup14
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle14; x: damier.boxPosXQML[14]; y: damier.boxPosYQML[14]; color: damier.boxColQML[14]}
-                    PropertyChanges { target: valeur15; text: damier.boxValQML[14];}
+                    PropertyChanges { target: rectangle14; x: damier.boxPosXQML[14]; y: damier.boxPosYQML[14]; opacity: damier.boxOpacityQML[14]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle14; x: damier.boxPosXQML[14]; y: damier.boxPosYQML[14]; color: damier.boxColQML[14]}
-                    PropertyChanges { target: valeur15; text: damier.boxValQML[14];}
+                    PropertyChanges { target: rectangle14; x: damier.boxPosXQML[14]; y: damier.boxPosYQML[14]; opacity: damier.boxOpacityQML[14]}
                 }
             ]
 
@@ -1059,8 +994,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle14; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle14; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle14; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur15; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle14; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -1068,8 +1002,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle14; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle14; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle14; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur15; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle14; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -1078,13 +1011,11 @@ Window {
             id: stateGroup15
             states: [State {
                     name: "suivant";
-                    PropertyChanges { target: rectangle15; x: damier.boxPosXQML[15]; y: damier.boxPosYQML[15]; color: damier.boxColQML[15]}
-                    PropertyChanges { target: valeur16; text: damier.boxValQML[15];}
+                    PropertyChanges { target: rectangle15; x: damier.boxPosXQML[15]; y: damier.boxPosYQML[15]; opacity: damier.boxOpacityQML[15]}
                 },
                 State {
                     name: "suivant2";
-                    PropertyChanges { target: rectangle15; x: damier.boxPosXQML[15]; y: damier.boxPosYQML[15]; color: damier.boxColQML[15]}
-                    PropertyChanges { target: valeur16; text: damier.boxValQML[15];}
+                    PropertyChanges { target: rectangle15; x: damier.boxPosXQML[15]; y: damier.boxPosYQML[15]; opacity: damier.boxOpacityQML[15]}
                 }
             ]
 
@@ -1093,8 +1024,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle15; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle15; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle15; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur16; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle15; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -1102,8 +1032,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle15; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle15; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle15; properties: "color"; duration: 10; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: valeur16; properties: "text"; duration: 10; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle15; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 }]
         }

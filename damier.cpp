@@ -17,6 +17,7 @@ Damier::Damier(int nb_lignes, int nb_colonnes, int borne_inf, int borne_sup, QOb
     emit boxYDemandee();
     emit controleChange();
     emit game_is_over();
+    emit boxOpacityDemandee();
 
 
 }
@@ -205,7 +206,7 @@ QList<QString> Damier::getBoxVal(){
             if (mat[i][j].getVal() != 0){
                 valVect[mat[i][j].getID()] = QString::number(mat[i][j].getVal());
             } else {
-                valVect[mat[i][j].getID()] = (QString("0"));
+                valVect[mat[i][j].getID()] = (QString(""));
             }
         }
     }
@@ -307,6 +308,7 @@ void Damier::create_new_box(){
 
 
     emit game_is_over();
+    emit boxOpacityDemandee();
 }
 
 bool Damier::damierRemplit(){
@@ -705,4 +707,24 @@ void Damier::compare_state(){
             }
         }
     }
+}
+
+QList<int> Damier::getBoxOpacity(){
+    QList<int> opVect;
+
+    for (int i= 0; i<nb_lignes*nb_colonnes; i++){
+        opVect.append(0);
+    }
+
+    // Prise des valeurs à partir des box
+    for (int i =0; i<4; i++){
+        for (int j=0; j<4; j++){
+            if (mat[i][j].getVal() == 0){
+                opVect[mat[i][j].getID()] = 0;
+            } else{
+                opVect[mat[i][j].getID()] = 1;
+            }
+        }
+    }
+    return opVect;
 }

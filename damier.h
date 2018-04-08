@@ -28,6 +28,7 @@ public:
     Q_PROPERTY(QString bestValQML READ readBest NOTIFY best_changed)
     Q_PROPERTY(QList<int> boxPosXQML READ getBoxX NOTIFY boxXDemandee)
     Q_PROPERTY(QList<int> boxPosYQML READ getBoxY NOTIFY boxYDemandee)
+    Q_PROPERTY(QList<int> boxOpacityQML READ getBoxOpacity NOTIFY boxOpacityDemandee)
     Q_PROPERTY(int controleQML READ controleMethode NOTIFY controleChange)
 
     Q_PROPERTY(QString overBoolQML READ readGameOver NOTIFY game_is_over)
@@ -77,6 +78,7 @@ public:
 
     QList<int> getBoxX();
     QList<int> getBoxY();
+    QList<int> getBoxOpacity();
 
     bool readGameOver();
 
@@ -111,6 +113,7 @@ signals:
     void best_changed();
     void boxXDemandee();
     void boxYDemandee();
+    void boxOpacityDemandee();
     void controleChange();
     void game_is_over();
 
