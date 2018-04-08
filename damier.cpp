@@ -747,6 +747,7 @@ QList<int> Damier::getBoxOpacity(){
         }
     }
     return opVect;
+}
 
 void Damier::verify_game_over(){
     bool remplit = damierRemplit();
@@ -799,5 +800,4 @@ void Damier::verify_win(){
             }
         }
     }
-
 }
