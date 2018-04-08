@@ -574,7 +574,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -582,7 +582,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -604,7 +604,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle1; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle1; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle1; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle1; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -612,7 +612,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle1; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle1; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle1; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle1; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -634,7 +634,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle2; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle2; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle2; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle2; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -642,7 +642,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle2; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle2; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle2; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle2; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -664,7 +664,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle3; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle3; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle3; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle3; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -672,7 +672,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle3; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle3; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle3; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle3; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -694,7 +694,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle4; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle4; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle4; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle4; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -702,7 +702,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle4; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle4; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle4; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle4; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -724,7 +724,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle5; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle5; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle5; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle5; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -732,7 +732,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle5; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle5; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle5; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle5; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -754,7 +754,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle6; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle6; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle6; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle6; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -762,7 +762,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle6; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle6; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle6; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle6; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -784,7 +784,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle7; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle7; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle7; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle7; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -792,7 +792,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle7; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle7; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle7; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle7; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -814,7 +814,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle8; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle8; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle8; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle8; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -822,7 +822,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle8; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle8; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle8; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle8; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -844,7 +844,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle9; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle9; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle9; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle9; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -852,7 +852,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle9; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle9; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle9; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle9; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -874,7 +874,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle10; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle10; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle10; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle10; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -882,7 +882,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle10; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle10; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle10; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle10; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -904,7 +904,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle11; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle11; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle11; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle11; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -912,7 +912,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle11; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle11; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle11; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle11; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -934,7 +934,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle12; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle12; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle12; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle12; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -942,7 +942,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle12; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle12; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle12; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle12; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -964,7 +964,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle13; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle13; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle13; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle13; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -972,7 +972,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle13; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle13; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle13; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle13; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -994,7 +994,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle14; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle14; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle14; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle14; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -1002,7 +1002,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle14; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle14; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle14; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle14; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
@@ -1024,7 +1024,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle15; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle15; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle15; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle15; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 },
                 Transition {
@@ -1032,7 +1032,7 @@ Window {
                     SequentialAnimation {
                         NumberAnimation { target: rectangle15; properties: "x"; duration: 500; easing.type: Easing.InOutQuad }
                         NumberAnimation { target: rectangle15; properties: "y"; duration: 500; easing.type: Easing.InOutQuad }
-                        NumberAnimation { target: rectangle15; properties: "opacity"; duration: 1000; easing.type: Easing.InOutQuad }
+                        NumberAnimation { target: rectangle15; properties: "opacity"; duration: 10; easing.type: Easing.InOutQuad }
                     }
                 }]
         }
