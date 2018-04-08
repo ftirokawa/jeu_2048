@@ -1341,7 +1341,7 @@ Window {
         y: 157
         width: 37
         height: 27
-        color: "#8e7a67"
+        color: "#00000000"
         anchors.left: grille.left
         anchors.leftMargin: 0
         anchors.bottom: grille.top
@@ -1351,18 +1351,12 @@ Window {
             id: mouseArea1
             anchors.fill: parent
             onClicked: damier.state_retourner()
+        }
 
-            Image {
-                id: image
-                x: 5
-                y: 5
-                anchors.rightMargin: 5
-                anchors.leftMargin: 5
-                anchors.bottomMargin: 5
-                anchors.topMargin: 5
-                anchors.fill: parent
-                source: "left-arrow.png"
-            }
+        Image {
+            id: image
+            anchors.fill: parent
+            source: "left-arrow.png"
         }
     }
 
@@ -1371,7 +1365,7 @@ Window {
         y: 159
         width: 37
         height: 27
-        color: "#8e7a67"
+        color: "#00000000"
         anchors.leftMargin: 10
         anchors.bottom: retourner.bottom
         anchors.left: retourner.right
@@ -1381,18 +1375,12 @@ Window {
             id: mouseArea2
             anchors.fill: parent
             onClicked: damier.state_avancer()
+        }
 
-            Image {
-                id: image1
-                x: 5
-                y: 5
-                anchors.rightMargin: 5
-                anchors.leftMargin: 5
-                anchors.bottomMargin: 5
-                anchors.topMargin: 5
-                anchors.fill: parent
-                source: "right-arrow.png"
-            }
+        Image {
+            id: image1
+            anchors.fill: parent
+            source: "right-arrow.png"
         }
     }
 

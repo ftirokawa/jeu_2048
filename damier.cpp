@@ -586,6 +586,7 @@ void Damier::save_state(){
 
     if(premierSt==NULL){
         premierSt=ST;
+        ST->pontuation=0;
         ST->avant=NULL;
         qDebug() << "First state";
     }
@@ -608,6 +609,7 @@ void Damier::actualise_state(state *ref){
     for (int i=0; i<4; i++){
         for (int j=0; j<4; j++){
             mat[i][j]=Box(mat[i][j].getID(),j*100+10,i*100+10,ref->matrix[i][j]);
+            mat[i][j].changeCouleur();
         }
     }
     pontuation=ref->pontuation;
@@ -676,3 +678,4 @@ void Damier::delete_tous_states(){
     qDebug() << "apaguei tbm o primeiro";
     premierSt=NULL;
 }
+
