@@ -258,13 +258,19 @@ void Damier::mouvement(int direction){
     }
     qDebug() << "change1" << change;
     compare_state();
+    verify_game_over();
+
     if(change==true){
         delete_states_apres();
         //3) Instantiation aléatoire d'une box à valeur initial 2 ou 4
         create_new_box();
         change=false;
     }
-    qDebug() << "change2" << change;
+    if(change==false&&fin_du_jeu==true){
+        emit game_is_over();
+    }
+    debug_matrix();
+    qDebug() << "fin" << fin_du_jeu;
 
 
 
@@ -292,9 +298,7 @@ void Damier::create_new_box(){
             }
         }
     }
-    if(remplit){
-        fin_du_jeu=true;
-    }
+
     save_state();
     emit boxValDemandee();
     emit couleurDemandee();
@@ -306,7 +310,6 @@ void Damier::create_new_box(){
     //    emit controleChange();
 
 
-    emit game_is_over();
 }
 
 bool Damier::damierRemplit(){
@@ -360,12 +363,14 @@ void Damier::mouvementHaut(){
 
                 } else{ // Sinon si la box a la même valeur que la box en mouvement
                     if (mat[w][j].getVal() == mat[x][y].getVal() && fusion[w][j] == 0 && fusion[x][y] == 0){ // 3) Fusion
-                        mat[w][j].ChangeVal();
-                        mat[w][j].changeCouleur();
-                        mat[x][y] = Box(mat[x][y].getID(), y*100+10, x*100+10);
-                        add_score(mat[w][j].getVal());
-                        fusion[w][j] = 1;
-                        x = w;
+                        if((x-w)==1||(w-x)==1){
+                            mat[w][j].ChangeVal();
+                            mat[w][j].changeCouleur();
+                            mat[x][y] = Box(mat[x][y].getID(), y*100+10, x*100+10);
+                            add_score(mat[w][j].getVal());
+                            fusion[w][j] = 1;
+                            x = w;
+                        }
 
                     }
 
@@ -400,12 +405,14 @@ void Damier::mouvementBas(){
 
                 } else{ // Sinon si la box a la même valeur que la box en mouvement
                     if (mat[w][j].getVal() == mat[x][y].getVal() && fusion[w][j] == 0  && fusion[x][y] == 0){ // 3) Fusion
-                        mat[w][j].ChangeVal();
-                        mat[w][j].changeCouleur();
-                        mat[x][y] = Box(mat[x][y].getID(), y*100+10, x*100+10);
-                        add_score(mat[w][j].getVal());
-                        fusion[w][j] = 1;
-                        x = w;
+                        if((x-w)==1||(w-x)==1){
+                            mat[w][j].ChangeVal();
+                            mat[w][j].changeCouleur();
+                            mat[x][y] = Box(mat[x][y].getID(), y*100+10, x*100+10);
+                            add_score(mat[w][j].getVal());
+                            fusion[w][j] = 1;
+                            x = w;
+                        }
 
                     }
 
@@ -440,13 +447,14 @@ void Damier::mouvementGauche(){
 
                 } else{ // Sinon si la box a la même valeur que la box en mouvement
                     if (mat[i][w].getVal() == mat[x][y].getVal() && fusion[i][w] == 0  && fusion[x][y] == 0){ // 3) Fusion
-                        mat[i][w].ChangeVal();
-                        mat[i][w].changeCouleur();
-                        mat[x][y] = Box(mat[x][y].getID(), y*100+10, x*100+10);
-                        add_score(mat[w][j].getVal());
-                        fusion[i][w] = 1;
-                        y = w;
-
+                        if((y-w)==1||(w-y)==1){
+                            mat[i][w].ChangeVal();
+                            mat[i][w].changeCouleur();
+                            mat[x][y] = Box(mat[x][y].getID(), y*100+10, x*100+10);
+                            add_score(mat[w][j].getVal());
+                            fusion[i][w] = 1;
+                            y = w;
+                        }
                     }
 
                 }
@@ -480,12 +488,14 @@ void Damier::mouvementDroite(){
 
                 } else{ // Sinon si la box a la même valeur que la box en mouvement
                     if (mat[i][w].getVal() == mat[x][y].getVal() && fusion[i][w] == 0  && fusion[x][y] == 0){ // 3) Fusion
-                        mat[i][w].ChangeVal();
-                        mat[i][w].changeCouleur();
-                        mat[x][y] = Box(mat[x][y].getID(), y*100+10, x*100+10);
-                        add_score(mat[w][j].getVal());
-                        fusion[i][w] = 1;
-                        y = w;
+                       if((y-w)==1||(w-y)==1){
+                           mat[i][w].ChangeVal();
+                            mat[i][w].changeCouleur();
+                            mat[x][y] = Box(mat[x][y].getID(), y*100+10, x*100+10);
+                            add_score(mat[w][j].getVal());
+                            fusion[i][w] = 1;
+                            y = w;
+                       }
 
                     }
 
@@ -535,8 +545,9 @@ void Damier::new_game(){
     emit game_is_over();
 }
 
-bool Damier::readGameOver(){
-    return fin_du_jeu;
+QString Damier::readGameOver(){
+    if(fin_du_jeu==true)return QString::number(1);
+    else{return QString::number(0);}
 }
 
 QList<int> Damier::getBoxX(){
@@ -589,7 +600,9 @@ void Damier::save_state(){
     }
     for (int i=0; i<4; i++){
         for (int j=0; j<4; j++){
-            ST->matrix[i][j]=mat[i][j].getVal();
+            int x=(mat[i][j].getX()-10)/100;
+            int y=(mat[i][j].getY()-10)/100;
+            ST->matrix[y][x]=mat[i][j].getVal();
         }
     }
 
@@ -613,12 +626,13 @@ void Damier::save_state(){
     currentSt=ST;
     dernierSt=ST;
 
-    qDebug() << "salvei o state" << ST;
+   /* qDebug() << "salvei o state" << ST;
     qDebug() << "state anterior" << ST->avant;
     qDebug() << "state de agora" << currentSt;
     qDebug() << "state ultimo" << dernierSt;
     qDebug() << "--------";
 
+    */
 }
 
 void Damier::actualise_state(state *ref){
@@ -647,8 +661,7 @@ void Damier::state_retourner(){
         qDebug() << "prox state" << avant->apres;*/
         currentSt=currentSt->avant;
         actualise_state(currentSt);
-        qDebug() << "esse state" <<  currentSt;
-        qDebug() << "prox state" << currentSt->apres;
+
 
     }
 
@@ -689,9 +702,9 @@ void Damier::delete_states_apres(){
 void Damier::delete_tous_states(){
     currentSt=premierSt;
     delete_states_apres();
-    qDebug() << "apaguei todos até o primeiro";
+
     delete_state(currentSt);
-    qDebug() << "apaguei tbm o primeiro";
+
     premierSt=NULL;
 }
 
@@ -705,4 +718,43 @@ void Damier::compare_state(){
             }
         }
     }
+}
+
+void Damier::verify_game_over(){
+    bool remplit = damierRemplit();
+    bool possible=false;
+    if(remplit==1){
+        for (int i=0; i<3; i++){
+            for (int j=0; j<3; j++){
+                if((currentSt->matrix[i][j]==currentSt->matrix[i+1][j])||(currentSt->matrix[i][j]==currentSt->matrix[i][j+1])){
+                    possible=true;
+            }
+            }
+                    //verificar ultima linha e ultima coluna tbm
+        }
+        for (int j=0;j<3;j++){
+            if(currentSt->matrix[3][j]==currentSt->matrix[3][j+1]){
+                possible=true;
+            }
+        }
+        for (int i=0;i<3;i++){
+            if(currentSt->matrix[i][3]==currentSt->matrix[i][3]){
+                possible=true;
+            }
+
+        }
+        if(possible==false){
+            fin_du_jeu=true;
+        }
+    }
+
+}
+
+void Damier::debug_matrix(){
+    qDebug() << "aloy";
+    qDebug() << mat[0][0].getVal() << mat[0][1].getVal()<< mat[0][2].getVal() << mat[0][3].getVal() ;
+    qDebug() << mat[1][0].getVal() << mat[1][1].getVal()<< mat[1][2].getVal() << mat[1][3].getVal() ;
+    qDebug() << mat[2][0].getVal() << mat[2][1].getVal()<< mat[2][2].getVal() << mat[2][3].getVal() ;
+    qDebug() << mat[3][0].getVal() << mat[3][1].getVal()<< mat[3][2].getVal() << mat[3][3].getVal() ;
+
 }

@@ -1413,7 +1413,7 @@ Window {
 
     Rectangle {
         function change_op(a) {
-            if (a==true){
+            if (a==1){
                 return 1;
             }
             else{
@@ -1435,7 +1435,7 @@ Window {
 
     Rectangle {
         function change_op(a) {
-            if (a==true){
+            if (a==1){
                 return 1;
             }
             else{

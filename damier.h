@@ -29,7 +29,6 @@ public:
     Q_PROPERTY(QList<int> boxPosXQML READ getBoxX NOTIFY boxXDemandee)
     Q_PROPERTY(QList<int> boxPosYQML READ getBoxY NOTIFY boxYDemandee)
     Q_PROPERTY(int controleQML READ controleMethode NOTIFY controleChange)
-
     Q_PROPERTY(QString overBoolQML READ readGameOver NOTIFY game_is_over)
 
 
@@ -68,6 +67,8 @@ public:
     void delete_states_apres();
     void delete_tous_states();
     void compare_state();
+    void verify_game_over();
+    void debug_matrix();
 
 
     QList<QString> getBoxVal();
@@ -78,7 +79,7 @@ public:
     QList<int> getBoxX();
     QList<int> getBoxY();
 
-    bool readGameOver();
+    QString readGameOver();
 
 
     Q_INVOKABLE void mouvement(int direction);
