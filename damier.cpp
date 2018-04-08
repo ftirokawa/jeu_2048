@@ -256,12 +256,16 @@ void Damier::mouvement(int direction){
     default:
         break;
     }
+    qDebug() << "change1" << change;
+    compare_state();
+    if(change==true){
+        delete_states_apres();
+        //3) Instantiation aléatoire d'une box à valeur initial 2 ou 4
+        create_new_box();
+        change=false;
+    }
+    qDebug() << "change2" << change;
 
-    delete_states_apres();
-
-
-    //3) Instantiation aléatoire d'une box à valeur initial 2 ou 4
-    create_new_box();
 
 
 }
@@ -353,6 +357,7 @@ void Damier::mouvementHaut(){
                     mat[x][y].setX(y*100+10);
                     mat[x][y].setY(x*100+10);
                     x = w; // la position change
+
                 } else{ // Sinon si la box a la même valeur que la box en mouvement
                     if (mat[w][j].getVal() == mat[x][y].getVal() && fusion[w][j] == 0 && fusion[x][y] == 0){ // 3) Fusion
                         mat[w][j].ChangeVal();
@@ -361,7 +366,9 @@ void Damier::mouvementHaut(){
                         add_score(mat[w][j].getVal());
                         fusion[w][j] = 1;
                         x = w;
+
                     }
+
                 }
 
             }
@@ -390,6 +397,7 @@ void Damier::mouvementBas(){
                     mat[x][y].setX(y*100+10);
                     mat[x][y].setY(x*100+10);
                     x = w; // la position change
+
                 } else{ // Sinon si la box a la même valeur que la box en mouvement
                     if (mat[w][j].getVal() == mat[x][y].getVal() && fusion[w][j] == 0  && fusion[x][y] == 0){ // 3) Fusion
                         mat[w][j].ChangeVal();
@@ -398,7 +406,9 @@ void Damier::mouvementBas(){
                         add_score(mat[w][j].getVal());
                         fusion[w][j] = 1;
                         x = w;
+
                     }
+
                 }
 
             }
@@ -427,6 +437,7 @@ void Damier::mouvementGauche(){
                     mat[x][y].setX(y*100+10);
                     mat[x][y].setY(x*100+10);
                     y = w; // la position change
+
                 } else{ // Sinon si la box a la même valeur que la box en mouvement
                     if (mat[i][w].getVal() == mat[x][y].getVal() && fusion[i][w] == 0  && fusion[x][y] == 0){ // 3) Fusion
                         mat[i][w].ChangeVal();
@@ -435,7 +446,9 @@ void Damier::mouvementGauche(){
                         add_score(mat[w][j].getVal());
                         fusion[i][w] = 1;
                         y = w;
+
                     }
+
                 }
 
             }
@@ -464,6 +477,7 @@ void Damier::mouvementDroite(){
                     mat[x][y].setX(y*100+10);
                     mat[x][y].setY(x*100+10);
                     y = w; // la position change
+
                 } else{ // Sinon si la box a la même valeur que la box en mouvement
                     if (mat[i][w].getVal() == mat[x][y].getVal() && fusion[i][w] == 0  && fusion[x][y] == 0){ // 3) Fusion
                         mat[i][w].ChangeVal();
@@ -472,7 +486,9 @@ void Damier::mouvementDroite(){
                         add_score(mat[w][j].getVal());
                         fusion[i][w] = 1;
                         y = w;
+
                     }
+
                 }
 
             }
@@ -679,3 +695,14 @@ void Damier::delete_tous_states(){
     premierSt=NULL;
 }
 
+void Damier::compare_state(){
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            int a=(mat[i][j].getX()-10)/100;
+            int b=(mat[i][j].getY()-10)/100;
+            if((mat[i][j].getVal())!=(currentSt->matrix[b][a])){
+                change=true;
+            }
+        }
+    }
+}

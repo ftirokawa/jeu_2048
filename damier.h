@@ -67,6 +67,7 @@ public:
     void delete_state(state *ref);
     void delete_states_apres();
     void delete_tous_states();
+    void compare_state();
 
 
     QList<QString> getBoxVal();
@@ -101,6 +102,7 @@ private:
     state* dernierSt=NULL;
     state* currentSt=NULL;
     state* premierSt=NULL;
+    bool change=false;
 
 signals:
     void boxValDemandee();
