@@ -41,19 +41,19 @@ void Box::changeCouleur(){
         couleur = "#f65e3b";
         break;
     case 128:
-        couleur = "#ccc0b4";
+        couleur = "#edce71";
         break;
     case 256:
-        couleur = "#ccc0b4";
+        couleur = "#edcb61";
         break;
     case 512:
-        couleur = "#ccc0b4";
+        couleur = "#edc750";
         break;
     case 1024:
-        couleur = "#ccc0b4";
+        couleur = "#ecc440";
         break;
     case 2048:
-        couleur = "#ccc0b4";
+        couleur = "#ecc12e";
         break;
     default:
         break;
@@ -66,6 +66,7 @@ int Box::getVal(){
 
 void Box::setVal(int valeur){
     val = valeur;
+    changeCouleur();
     return;
 }
 

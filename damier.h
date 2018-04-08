@@ -9,6 +9,14 @@
 
 using namespace std;
 
+struct state{
+    int **matrix;
+    int pontuation;
+    state *apres;
+    state *avant;
+};
+
+
 class Damier : public QObject
 {
     Q_OBJECT
@@ -45,6 +53,7 @@ public:
 
     bool damierRemplit();
     bool ** initialisationMatrice();
+    void create_new_box();
     void mouvementHaut();
     void mouvementBas();
     void mouvementGauche();
@@ -52,6 +61,12 @@ public:
 
     void add_score(int value);
     void new_best(int value);
+
+    void save_state();
+    void actualise_state(state *ref);
+    void delete_state(state *ref);
+    void delete_states_apres();
+    void delete_tous_states();
 
 
     QList<QString> getBoxVal();
@@ -67,6 +82,9 @@ public:
 
     Q_INVOKABLE void mouvement(int direction);
     Q_INVOKABLE void new_game();
+    Q_INVOKABLE void state_retourner();
+    Q_INVOKABLE void state_avancer();
+
     int controleMethode();
 
 
@@ -80,6 +98,9 @@ private:
     int best;
     int controle;
     bool fin_du_jeu;
+    state* dernierSt=NULL;
+    state* currentSt=NULL;
+    state* premierSt=NULL;
 
 signals:
     void boxValDemandee();
@@ -94,5 +115,6 @@ signals:
 
 public slots:
 };
+
 
 #endif // DAMIER_H

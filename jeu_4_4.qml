@@ -570,25 +570,25 @@ Window {
                     name: "suivant";
                     PropertyChanges { target: rectangle; x: damier.boxPosXQML[0]; y: damier.boxPosYQML[0]}
                 },
-                    State {
+                State {
                     name: "suivant2";
                     PropertyChanges { target: rectangle; x: damier.boxPosXQML[0]; y: damier.boxPosYQML[0]}
                 }
-                ]
+            ]
 
-        transitions: [Transition {
+            transitions: [Transition {
                     from: "*"; to: "suivant"; reversible: false
                     ParallelAnimation {
                         NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
                 },
-                    Transition {
+                Transition {
                     from: "*"; to: "suivant2"; reversible: false
                     ParallelAnimation {
                         NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
                     }
-        }]
-       }
+                }]
+        }
 
         StateGroup {
             id: stateGroup1
@@ -597,23 +597,23 @@ Window {
                     PropertyChanges { target: rectangle1; x: damier.boxPosXQML[1]; y: damier.boxPosYQML[1]}
                 },
                 State {
-                name: "suivant2";
-                PropertyChanges { target: rectangle1; x: damier.boxPosXQML[1]; y: damier.boxPosYQML[1]}
-            }
-                ]
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle1; x: damier.boxPosXQML[1]; y: damier.boxPosYQML[1]}
+                }
+            ]
 
             transitions: [Transition {
-                        from: "*"; to: "suivant"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-                    },
-                        Transition {
-                        from: "*"; to: "suivant2"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-            }]
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                }]
         }
 
         StateGroup {
@@ -622,24 +622,24 @@ Window {
                     name: "suivant";
                     PropertyChanges { target: rectangle2; x: damier.boxPosXQML[2]; y: damier.boxPosYQML[2]}
                 },
-                    State {
+                State {
                     name: "suivant2";
                     PropertyChanges { target: rectangle2; x: damier.boxPosXQML[2]; y: damier.boxPosYQML[2]}
-            }
-                ]
+                }
+            ]
 
             transitions: [Transition {
-                        from: "*"; to: "suivant"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-                    },
-                        Transition {
-                        from: "*"; to: "suivant2"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-            }]
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                }]
         }
 
         StateGroup {
@@ -647,25 +647,25 @@ Window {
             states: [State {
                     name: "suivant";
                     PropertyChanges { target: rectangle3; x: damier.boxPosXQML[3]; y: damier.boxPosYQML[3]}
-                    },
-                    State {
+                },
+                State {
                     name: "suivant2";
                     PropertyChanges { target: rectangle3; x: damier.boxPosXQML[3]; y: damier.boxPosYQML[3]}
-            }
-                ]
+                }
+            ]
 
             transitions: [Transition {
-                        from: "*"; to: "suivant"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-                    },
-                        Transition {
-                        from: "*"; to: "suivant2"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-            }]
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                }]
         }
 
         StateGroup {
@@ -674,24 +674,24 @@ Window {
                     name: "suivant";
                     PropertyChanges { target: rectangle4; x: damier.boxPosXQML[4]; y: damier.boxPosYQML[4]}
                 },
-                    State {
+                State {
                     name: "suivant2";
                     PropertyChanges { target: rectangle4; x: damier.boxPosXQML[4]; y: damier.boxPosYQML[4]}
                 }
-                ]
+            ]
 
             transitions: [Transition {
-                        from: "*"; to: "suivant"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-                    },
-                        Transition {
-                        from: "*"; to: "suivant2"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-            }]
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                }]
         }
 
         StateGroup {
@@ -700,24 +700,24 @@ Window {
                     name: "suivant";
                     PropertyChanges { target: rectangle5; x: damier.boxPosXQML[5]; y: damier.boxPosYQML[5]}
                 },
-                    State {
+                State {
                     name: "suivant2";
                     PropertyChanges { target: rectangle5; x: damier.boxPosXQML[5]; y: damier.boxPosYQML[5]}
-            }
-                ]
+                }
+            ]
 
             transitions: [Transition {
-                        from: "*"; to: "suivant"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-                    },
-                        Transition {
-                        from: "*"; to: "suivant2"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-            }]
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                }]
         }
 
         StateGroup {
@@ -727,23 +727,23 @@ Window {
                     PropertyChanges { target: rectangle6; x: damier.boxPosXQML[6]; y: damier.boxPosYQML[6]}
                 },
                 State {
-                name: "suivant2";
-                PropertyChanges { target: rectangle6; x: damier.boxPosXQML[6]; y: damier.boxPosYQML[6]}
-            }
-                ]
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle6; x: damier.boxPosXQML[6]; y: damier.boxPosYQML[6]}
+                }
+            ]
 
             transitions: [Transition {
-                        from: "*"; to: "suivant"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-                    },
-                        Transition {
-                        from: "*"; to: "suivant2"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-            }]
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                }]
         }
 
         StateGroup {
@@ -753,23 +753,23 @@ Window {
                     PropertyChanges { target: rectangle7; x: damier.boxPosXQML[7]; y: damier.boxPosYQML[7]}
                 },
                 State {
-                name: "suivant2";
-                PropertyChanges { target: rectangle7; x: damier.boxPosXQML[7]; y: damier.boxPosYQML[7]}
-            }
-                ]
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle7; x: damier.boxPosXQML[7]; y: damier.boxPosYQML[7]}
+                }
+            ]
 
             transitions: [Transition {
-                        from: "*"; to: "suivant"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-                    },
-                        Transition {
-                        from: "*"; to: "suivant2"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-            }]
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                }]
         }
 
         StateGroup {
@@ -779,23 +779,23 @@ Window {
                     PropertyChanges { target: rectangle8; x: damier.boxPosXQML[8]; y: damier.boxPosYQML[8]}
                 },
                 State {
-                name: "suivant2";
-                PropertyChanges { target: rectangle8; x: damier.boxPosXQML[8]; y: damier.boxPosYQML[8]}
-            }
-                ]
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle8; x: damier.boxPosXQML[8]; y: damier.boxPosYQML[8]}
+                }
+            ]
 
             transitions: [Transition {
-                        from: "*"; to: "suivant"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-                    },
-                        Transition {
-                        from: "*"; to: "suivant2"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-            }]
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                }]
         }
 
         StateGroup {
@@ -805,23 +805,23 @@ Window {
                     PropertyChanges { target: rectangle9; x: damier.boxPosXQML[9]; y: damier.boxPosYQML[9]}
                 },
                 State {
-                name: "suivant2";
-                PropertyChanges { target: rectangle9; x: damier.boxPosXQML[9]; y: damier.boxPosYQML[9]}
-            }
-                ]
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle9; x: damier.boxPosXQML[9]; y: damier.boxPosYQML[9]}
+                }
+            ]
 
             transitions: [Transition {
-                        from: "*"; to: "suivant"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-                    },
-                        Transition {
-                        from: "*"; to: "suivant2"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-            }]
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                }]
         }
 
         StateGroup {
@@ -831,23 +831,23 @@ Window {
                     PropertyChanges { target: rectangle10; x: damier.boxPosXQML[10]; y: damier.boxPosYQML[10]}
                 },
                 State {
-                name: "suivant2";
-                PropertyChanges { target: rectangle10; x: damier.boxPosXQML[10]; y: damier.boxPosYQML[10]}
-            }
-                ]
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle10; x: damier.boxPosXQML[10]; y: damier.boxPosYQML[10]}
+                }
+            ]
 
             transitions: [Transition {
-                        from: "*"; to: "suivant"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-                    },
-                        Transition {
-                        from: "*"; to: "suivant2"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-            }]
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                }]
         }
 
         StateGroup {
@@ -857,23 +857,23 @@ Window {
                     PropertyChanges { target: rectangle11; x: damier.boxPosXQML[11]; y: damier.boxPosYQML[11]}
                 },
                 State {
-                name: "suivant2";
-                PropertyChanges { target: rectangle11; x: damier.boxPosXQML[11]; y: damier.boxPosYQML[11]}
-            }
-                ]
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle11; x: damier.boxPosXQML[11]; y: damier.boxPosYQML[11]}
+                }
+            ]
 
             transitions: [Transition {
-                        from: "*"; to: "suivant"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-                    },
-                        Transition {
-                        from: "*"; to: "suivant2"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-            }]
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                }]
         }
 
         StateGroup {
@@ -883,23 +883,23 @@ Window {
                     PropertyChanges { target: rectangle12; x: damier.boxPosXQML[12]; y: damier.boxPosYQML[12]}
                 },
                 State {
-                name: "suivant2";
-                PropertyChanges { target: rectangle12; x: damier.boxPosXQML[12]; y: damier.boxPosYQML[12]}
-            }
-                ]
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle12; x: damier.boxPosXQML[12]; y: damier.boxPosYQML[12]}
+                }
+            ]
 
             transitions: [Transition {
-                        from: "*"; to: "suivant"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-                    },
-                        Transition {
-                        from: "*"; to: "suivant2"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-            }]
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                }]
         }
 
         StateGroup {
@@ -909,23 +909,23 @@ Window {
                     PropertyChanges { target: rectangle13; x: damier.boxPosXQML[13]; y: damier.boxPosYQML[13]}
                 },
                 State {
-                name: "suivant2";
-                PropertyChanges { target: rectangle13; x: damier.boxPosXQML[13]; y: damier.boxPosYQML[13]}
-            }
-                ]
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle13; x: damier.boxPosXQML[13]; y: damier.boxPosYQML[13]}
+                }
+            ]
 
             transitions: [Transition {
-                        from: "*"; to: "suivant"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-                    },
-                        Transition {
-                        from: "*"; to: "suivant2"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-            }]
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                }]
         }
 
         StateGroup {
@@ -935,23 +935,23 @@ Window {
                     PropertyChanges { target: rectangle14; x: damier.boxPosXQML[14]; y: damier.boxPosYQML[14]}
                 },
                 State {
-                name: "suivant2";
-                PropertyChanges { target: rectangle14; x: damier.boxPosXQML[14]; y: damier.boxPosYQML[14]}
-            }
-                ]
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle14; x: damier.boxPosXQML[14]; y: damier.boxPosYQML[14]}
+                }
+            ]
 
             transitions: [Transition {
-                        from: "*"; to: "suivant"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-                    },
-                        Transition {
-                        from: "*"; to: "suivant2"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-            }]
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                }]
         }
 
         StateGroup {
@@ -961,46 +961,46 @@ Window {
                     PropertyChanges { target: rectangle15; x: damier.boxPosXQML[15]; y: damier.boxPosYQML[15]}
                 },
                 State {
-                name: "suivant2";
-                PropertyChanges { target: rectangle15; x: damier.boxPosXQML[15]; y: damier.boxPosYQML[15]}
-            }
-                ]
+                    name: "suivant2";
+                    PropertyChanges { target: rectangle15; x: damier.boxPosXQML[15]; y: damier.boxPosYQML[15]}
+                }
+            ]
 
             transitions: [Transition {
-                        from: "*"; to: "suivant"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-                    },
-                        Transition {
-                        from: "*"; to: "suivant2"; reversible: false
-                        ParallelAnimation {
-                            NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
-                        }
-            }]
+                    from: "*"; to: "suivant"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                },
+                Transition {
+                    from: "*"; to: "suivant2"; reversible: false
+                    ParallelAnimation {
+                        NumberAnimation { properties: "x,y"; duration: 1000; easing.type: Easing.InOutQuad }
+                    }
+                }]
         }
 
         Keys.onPressed: {
-          switch (event.key) {
+            switch (event.key) {
             case Qt.Key_Up:
-              damier.mouvement(1);
+                damier.mouvement(1);
                 if (damier.controleQML === 1){
-                stateGroup0.state ='suivant'
-                stateGroup1.state ='suivant'
-                stateGroup2.state ='suivant'
-                stateGroup3.state ='suivant'
-                stateGroup4.state ='suivant'
-                stateGroup5.state ='suivant'
-                stateGroup6.state ='suivant'
-                stateGroup7.state ='suivant'
-                stateGroup8.state ='suivant'
-                stateGroup9.state ='suivant'
-                stateGroup10.state ='suivant'
-                stateGroup11.state ='suivant'
-                stateGroup12.state ='suivant'
-                stateGroup13.state ='suivant'
-                stateGroup14.state ='suivant'
-                stateGroup15.state ='suivant'
+                    stateGroup0.state ='suivant'
+                    stateGroup1.state ='suivant'
+                    stateGroup2.state ='suivant'
+                    stateGroup3.state ='suivant'
+                    stateGroup4.state ='suivant'
+                    stateGroup5.state ='suivant'
+                    stateGroup6.state ='suivant'
+                    stateGroup7.state ='suivant'
+                    stateGroup8.state ='suivant'
+                    stateGroup9.state ='suivant'
+                    stateGroup10.state ='suivant'
+                    stateGroup11.state ='suivant'
+                    stateGroup12.state ='suivant'
+                    stateGroup13.state ='suivant'
+                    stateGroup14.state ='suivant'
+                    stateGroup15.state ='suivant'
                 } else {
                     stateGroup0.state ='suivant2'
                     stateGroup1.state ='suivant2'
@@ -1019,26 +1019,26 @@ Window {
                     stateGroup14.state ='suivant2'
                     stateGroup15.state ='suivant2'
                 }
-              break;
+                break;
             case Qt.Key_Down:
-              damier.mouvement(2);
+                damier.mouvement(2);
                 if (damier.controleQML === 1){
-                stateGroup0.state ='suivant'
-                stateGroup1.state ='suivant'
-                stateGroup2.state ='suivant'
-                stateGroup3.state ='suivant'
-                stateGroup4.state ='suivant'
-                stateGroup5.state ='suivant'
-                stateGroup6.state ='suivant'
-                stateGroup7.state ='suivant'
-                stateGroup8.state ='suivant'
-                stateGroup9.state ='suivant'
-                stateGroup10.state ='suivant'
-                stateGroup11.state ='suivant'
-                stateGroup12.state ='suivant'
-                stateGroup13.state ='suivant'
-                stateGroup14.state ='suivant'
-                stateGroup15.state ='suivant'
+                    stateGroup0.state ='suivant'
+                    stateGroup1.state ='suivant'
+                    stateGroup2.state ='suivant'
+                    stateGroup3.state ='suivant'
+                    stateGroup4.state ='suivant'
+                    stateGroup5.state ='suivant'
+                    stateGroup6.state ='suivant'
+                    stateGroup7.state ='suivant'
+                    stateGroup8.state ='suivant'
+                    stateGroup9.state ='suivant'
+                    stateGroup10.state ='suivant'
+                    stateGroup11.state ='suivant'
+                    stateGroup12.state ='suivant'
+                    stateGroup13.state ='suivant'
+                    stateGroup14.state ='suivant'
+                    stateGroup15.state ='suivant'
                 } else {
                     stateGroup0.state ='suivant2'
                     stateGroup1.state ='suivant2'
@@ -1057,26 +1057,26 @@ Window {
                     stateGroup14.state ='suivant2'
                     stateGroup15.state ='suivant2'
                 }
-              break;
+                break;
             case Qt.Key_Left:
-              damier.mouvement(3);
+                damier.mouvement(3);
                 if (damier.controleQML === 1){
-                stateGroup0.state ='suivant'
-                stateGroup1.state ='suivant'
-                stateGroup2.state ='suivant'
-                stateGroup3.state ='suivant'
-                stateGroup4.state ='suivant'
-                stateGroup5.state ='suivant'
-                stateGroup6.state ='suivant'
-                stateGroup7.state ='suivant'
-                stateGroup8.state ='suivant'
-                stateGroup9.state ='suivant'
-                stateGroup10.state ='suivant'
-                stateGroup11.state ='suivant'
-                stateGroup12.state ='suivant'
-                stateGroup13.state ='suivant'
-                stateGroup14.state ='suivant'
-                stateGroup15.state ='suivant'
+                    stateGroup0.state ='suivant'
+                    stateGroup1.state ='suivant'
+                    stateGroup2.state ='suivant'
+                    stateGroup3.state ='suivant'
+                    stateGroup4.state ='suivant'
+                    stateGroup5.state ='suivant'
+                    stateGroup6.state ='suivant'
+                    stateGroup7.state ='suivant'
+                    stateGroup8.state ='suivant'
+                    stateGroup9.state ='suivant'
+                    stateGroup10.state ='suivant'
+                    stateGroup11.state ='suivant'
+                    stateGroup12.state ='suivant'
+                    stateGroup13.state ='suivant'
+                    stateGroup14.state ='suivant'
+                    stateGroup15.state ='suivant'
                 } else {
                     stateGroup0.state ='suivant2'
                     stateGroup1.state ='suivant2'
@@ -1095,26 +1095,26 @@ Window {
                     stateGroup14.state ='suivant2'
                     stateGroup15.state ='suivant2'
                 }
-              break;
+                break;
             case Qt.Key_Right:
-              damier.mouvement(4);
+                damier.mouvement(4);
                 if (damier.controleQML === 1){
-                stateGroup0.state ='suivant'
-                stateGroup1.state ='suivant'
-                stateGroup2.state ='suivant'
-                stateGroup3.state ='suivant'
-                stateGroup4.state ='suivant'
-                stateGroup5.state ='suivant'
-                stateGroup6.state ='suivant'
-                stateGroup7.state ='suivant'
-                stateGroup8.state ='suivant'
-                stateGroup9.state ='suivant'
-                stateGroup10.state ='suivant'
-                stateGroup11.state ='suivant'
-                stateGroup12.state ='suivant'
-                stateGroup13.state ='suivant'
-                stateGroup14.state ='suivant'
-                stateGroup15.state ='suivant'
+                    stateGroup0.state ='suivant'
+                    stateGroup1.state ='suivant'
+                    stateGroup2.state ='suivant'
+                    stateGroup3.state ='suivant'
+                    stateGroup4.state ='suivant'
+                    stateGroup5.state ='suivant'
+                    stateGroup6.state ='suivant'
+                    stateGroup7.state ='suivant'
+                    stateGroup8.state ='suivant'
+                    stateGroup9.state ='suivant'
+                    stateGroup10.state ='suivant'
+                    stateGroup11.state ='suivant'
+                    stateGroup12.state ='suivant'
+                    stateGroup13.state ='suivant'
+                    stateGroup14.state ='suivant'
+                    stateGroup15.state ='suivant'
                 } else {
                     stateGroup0.state ='suivant2'
                     stateGroup1.state ='suivant2'
@@ -1133,9 +1133,9 @@ Window {
                     stateGroup14.state ='suivant2'
                     stateGroup15.state ='suivant2'
                 }
-              break;
-          }
-       }
+                break;
+            }
+        }
     }
 
 
@@ -1335,5 +1335,68 @@ Window {
         }
         anchors.verticalCenter: rectangle16.verticalCenter
     }
+
+    Rectangle {
+        id: retourner
+        y: 157
+        width: 37
+        height: 27
+        color: "#8e7a67"
+        anchors.left: grille.left
+        anchors.leftMargin: 0
+        anchors.bottom: grille.top
+        anchors.bottomMargin: 10
+
+        MouseArea {
+            id: mouseArea1
+            anchors.fill: parent
+            onClicked: damier.state_retourner()
+
+            Image {
+                id: image
+                x: 5
+                y: 5
+                anchors.rightMargin: 5
+                anchors.leftMargin: 5
+                anchors.bottomMargin: 5
+                anchors.topMargin: 5
+                anchors.fill: parent
+                source: "left-arrow.png"
+            }
+        }
+    }
+
+    Rectangle {
+        id: avancer
+        y: 159
+        width: 37
+        height: 27
+        color: "#8e7a67"
+        anchors.leftMargin: 10
+        anchors.bottom: retourner.bottom
+        anchors.left: retourner.right
+        anchors.bottomMargin: 0
+
+        MouseArea {
+            id: mouseArea2
+            anchors.fill: parent
+            onClicked: damier.state_avancer()
+
+            Image {
+                id: image1
+                x: 5
+                y: 5
+                anchors.rightMargin: 5
+                anchors.leftMargin: 5
+                anchors.bottomMargin: 5
+                anchors.topMargin: 5
+                anchors.fill: parent
+                source: "right-arrow.png"
+            }
+        }
+    }
+
+
+
 
 }

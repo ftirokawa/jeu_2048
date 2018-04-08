@@ -1,4 +1,5 @@
 #include "damier.h"
+#include <QDebug>
 
 Damier::Damier(int nb_lignes, int nb_colonnes, int borne_inf, int borne_sup, QObject *parent) : QObject(parent)
 {
@@ -132,6 +133,7 @@ void Damier::Alloc(int lignes, int colonnes, int borne_inf, int borne_sup){
 
 
     Remplir(0);
+    create_new_box();
     return;
 }
 
@@ -255,7 +257,16 @@ void Damier::mouvement(int direction){
         break;
     }
 
+    delete_states_apres();
+
+
     //3) Instantiation aléatoire d'une box à valeur initial 2 ou 4
+    create_new_box();
+
+
+}
+
+void Damier::create_new_box(){
     srand(time(NULL));
     int i, j, rarete;
     rarete = rand()%10;
@@ -266,12 +277,12 @@ void Damier::mouvement(int direction){
         j = rand()%4;
 
         if (mat[i][j].getVal() == 0 && rarete == 9){
-            mat[i][j] = Box(mat[i][j].getID(), j*100+10, i*100+10,4);
+            mat[i][j] = Box(mat[i][j].getID(), j*100+10, i*100+10,4,"#ede0c8" );
             add_score(mat[i][j].getVal());
             controle = 1;
         } else{
             if(mat[i][j].getVal() == 0){
-                mat[i][j] = Box(mat[i][j].getID(), j*100+10, i*100+10,2);
+                mat[i][j] = Box(mat[i][j].getID(), j*100+10, i*100+10,2,"#eee4da");
                 add_score(mat[i][j].getVal());
                 controle=1;
             }
@@ -280,6 +291,7 @@ void Damier::mouvement(int direction){
     if(remplit){
         fin_du_jeu=true;
     }
+    save_state();
     emit boxValDemandee();
     emit couleurDemandee();
     emit score_changed();
@@ -291,8 +303,6 @@ void Damier::mouvement(int direction){
 
 
     emit game_is_over();
-
-
 }
 
 bool Damier::damierRemplit(){
@@ -498,6 +508,7 @@ void Damier::new_best(int value){
 
 
 void Damier::new_game(){
+    delete_tous_states();
     Redim(nb_lignes, nb_colonnes, borne_inf, borne_sup);
     pontuation=0;
     fin_du_jeu=false;
@@ -553,3 +564,115 @@ int Damier::controleMethode(){
     return controle;
 }
 
+void Damier::save_state(){
+    state *ST = new state;
+
+    ST->matrix=new int*[4];
+    for (int i=0; i<4; i++){
+        ST->matrix[i]=new int[4];
+    }
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            ST->matrix[i][j]=mat[i][j].getVal();
+        }
+    }
+
+    ST->pontuation=pontuation;
+
+    ST->avant=currentSt;
+    ST->apres=NULL;
+
+    //si on est dans la première matrice crée:
+
+    if(premierSt==NULL){
+        premierSt=ST;
+        ST->avant=NULL;
+        qDebug() << "First state";
+    }
+    else{
+        ST->avant->apres=ST;
+    }
+
+    currentSt=ST;
+    dernierSt=ST;
+
+    qDebug() << "salvei o state" << ST;
+    qDebug() << "state anterior" << ST->avant;
+    qDebug() << "state de agora" << currentSt;
+    qDebug() << "state ultimo" << dernierSt;
+    qDebug() << "--------";
+
+}
+
+void Damier::actualise_state(state *ref){
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            mat[i][j]=Box(mat[i][j].getID(),j*100+10,i*100+10,ref->matrix[i][j]);
+        }
+    }
+    pontuation=ref->pontuation;
+    emit boxValDemandee();
+    emit couleurDemandee();
+    emit score_changed();
+}
+
+
+void Damier::state_retourner(){
+
+    if(currentSt!=premierSt){
+        /*state *avant;
+        avant=currentSt->avant;
+        avant->apres=currentSt;
+        actualise_state(avant);
+        currentSt=avant;
+        qDebug() << "esse state" <<  avant;
+        qDebug() << "prox state" << avant->apres;*/
+        currentSt=currentSt->avant;
+        actualise_state(currentSt);
+        qDebug() << "esse state" <<  currentSt;
+        qDebug() << "prox state" << currentSt->apres;
+
+    }
+
+}
+
+void Damier::state_avancer(){
+
+    if(currentSt!=dernierSt){
+        currentSt=currentSt->apres;
+        actualise_state(currentSt);
+        qDebug() << "esse state" <<  currentSt;
+        qDebug() << "prox state" << currentSt->apres;
+    }
+}
+
+
+void Damier::delete_state(state *ref){
+    qDebug() << "delete state" << ref;
+    for (int i=0; i<4; i++){
+        delete[] ref->matrix[i];
+    }
+    delete [] ref->matrix;
+    delete ref->apres;
+    delete ref;
+    ref = NULL;
+}
+
+
+void Damier::delete_states_apres(){
+    while(currentSt!=dernierSt){
+        dernierSt=dernierSt->avant;
+        delete_state(dernierSt->apres);
+    }
+
+    dernierSt->apres=NULL;
+}
+
+void Damier::delete_tous_states(){
+    currentSt=premierSt;
+    delete_states_apres();
+    qDebug() << "apaguei todos até o primeiro";
+    delete_state(currentSt);
+    qDebug() << "apaguei tbm o primeiro";
+    premierSt=NULL;
+}
