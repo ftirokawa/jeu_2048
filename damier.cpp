@@ -308,7 +308,7 @@ void Damier::create_new_box(){
 
 
     emit game_is_over();
-    emit boxOpacityDemandee();
+//    emit boxOpacityDemandee();
 }
 
 bool Damier::damierRemplit(){
