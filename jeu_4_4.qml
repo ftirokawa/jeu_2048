@@ -12,6 +12,15 @@ Window {
 
     Rectangle {
 
+        function color_box(val){
+            if(val==0){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+
         id: grille
         x: 40
         width: 410
@@ -22,6 +31,7 @@ Window {
         anchors.horizontalCenterOffset: 0
         anchors.horizontalCenter: parent.horizontalCenter
         focus: true
+
 
         Rectangle {
             id: box_1_1
@@ -46,6 +56,7 @@ Window {
             color: damier.boxColQML[0]
             z: 1
             opacity: damier.boxOpacityQML[0]
+            visible: parent.color_box(damier.boxValQML[0])
 
             Text {
                 id: valeur1
@@ -82,6 +93,7 @@ Window {
             color: damier.boxColQML[4]
             z: 1
             opacity: damier.boxOpacityQML[4]
+            visible: parent.color_box(damier.boxValQML[4])
             Text {
                 id: valeur5
                 x: 34
@@ -117,6 +129,7 @@ Window {
             color: damier.boxColQML[8]
             z: 1
             opacity: damier.boxOpacityQML[8]
+            visible: parent.color_box(damier.boxValQML[8])
             Text {
                 id: valeur9
                 x: 34
@@ -150,6 +163,7 @@ Window {
             color: damier.boxColQML[12]
             z: 1
             opacity: damier.boxOpacityQML[12]
+            visible: parent.color_box(damier.boxValQML[12])
             Text {
                 id: valeur13
                 x: 34
@@ -183,6 +197,7 @@ Window {
             color: damier.boxColQML[1]
             z: 1
             opacity: damier.boxOpacityQML[1]
+            visible: parent.color_box(damier.boxValQML[1])
             Text {
                 id: valeur2
                 x: 34
@@ -216,6 +231,7 @@ Window {
             color: damier.boxColQML[5]
             z: 1
             opacity: damier.boxOpacityQML[5]
+            visible: parent.color_box(damier.boxValQML[5])
             Text {
                 id: valeur6
                 x: 34
@@ -249,6 +265,7 @@ Window {
             color: damier.boxColQML[9]
             z: 1
             opacity: damier.boxOpacityQML[9]
+            visible: parent.color_box(damier.boxValQML[9])
             Text {
                 id: valeur10
                 x: 34
@@ -282,6 +299,7 @@ Window {
             color: damier.boxColQML[13]
             z: 1
             opacity: damier.boxOpacityQML[13]
+            visible: parent.color_box(damier.boxValQML[13])
             Text {
                 id: valeur14
                 x: 34
@@ -315,6 +333,7 @@ Window {
             color: damier.boxColQML[2]
             z: 1
             opacity: damier.boxOpacityQML[2]
+            visible: parent.color_box(damier.boxValQML[2])
             Text {
                 id: valeur3
                 x: 34
@@ -348,6 +367,7 @@ Window {
             color: damier.boxColQML[6]
             z: 1
             opacity: damier.boxOpacityQML[6]
+            visible: parent.color_box(damier.boxValQML[6])
             Text {
                 id: valeur7
                 x: 34
@@ -381,6 +401,7 @@ Window {
             color: damier.boxColQML[10]
             z: 1
             opacity: damier.boxOpacityQML[10]
+            visible: parent.color_box(damier.boxValQML[10])
             Text {
                 id: valeur11
                 x: 34
@@ -414,6 +435,7 @@ Window {
             color: damier.boxColQML[14]
             z: 1
             opacity: damier.boxOpacityQML[14]
+            visible: parent.color_box(damier.boxValQML[14])
             Text {
                 id: valeur15
                 x: 34
@@ -447,6 +469,7 @@ Window {
             color: damier.boxColQML[3]
             z: 1
             opacity: damier.boxOpacityQML[3]
+            visible: parent.color_box(damier.boxValQML[3])
             Text {
                 id: valeur4
                 x: 34
@@ -480,6 +503,7 @@ Window {
             color: damier.boxColQML[7]
             opacity: damier.boxOpacityQML[7]
             z: 1
+            visible: parent.color_box(damier.boxValQML[7])
             Text {
                 id: valeur8
                 x: 34
@@ -513,6 +537,7 @@ Window {
             color: damier.boxColQML[11]
             opacity: damier.boxOpacityQML[11]
             z: 1
+            visible: parent.color_box(damier.boxValQML[11])
             Text {
                 id: valeur12
                 x: 34
@@ -546,6 +571,7 @@ Window {
             color: damier.boxColQML[15]
             opacity: damier.boxOpacityQML[15]
             z: 1
+            visible: parent.color_box(damier.boxValQML[15])
             Text {
                 id: valeur16
                 x: 34
